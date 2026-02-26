@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Doors Direct South LLC",
-  description: "Home Page for Doors Direct South LLC",
+  title: "Doors Direct South LLC Residential Doors",
+  description: "Residential Doors",
 };
 
 export default function RootLayout({
@@ -23,14 +23,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        {children}
-      </body>
-    </html>
-  );
+  return <div>{children};</div>;
 }
