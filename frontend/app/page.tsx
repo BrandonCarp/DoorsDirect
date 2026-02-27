@@ -1,4 +1,5 @@
 import Image from "next/image";
+import VideoBox from "@/components/VideoBox";
 
 export default function Home() {
   return (
