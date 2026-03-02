@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "VertiStack® Clear Door",
+    "description": "The VertiStack® Clear glass overhead door features a unique construction with sections that stack above the opening, eliminating the need for overhead tracks. This allows for a clear ceiling and won't conflict with mechanical, electrical or plumbing fixtures located in the ceiling. Designed with a clean, modern aesthetic, there are no hinges or exposed tracks or cables, and it is available with a variety of aluminum finishes and window materials. VertiStack clear is available with a motor operator or a manual operated hand chain. ",
+    "images": ["/images/bridgeport/door1.png", "", "", "", ""],
+    "brochure": "https://literature.clopay.com/pdf_files/RSDR-AVANTEAXSS-19.pdf"
+  },
+  {
+    "id": 2,
+    "title": "Architectural Series - Aluminum",
+    "description": "Clopay’s aluminum full-view doors are ideal for commercial buildings requiring visibility, access to natural lighting and a modern look. They're a great choice for applications ranging from restaurants and fire stations to car dealerships. These overhead doors come with an aluminum frame construction and also come in solid aluminum if privacy is preferred. You can also customize your door with a wide variety of window, color, design and performance options.",
+    "images": ["/images/bridgeport/door1.png", "", "", "", ""],
+    "brochure": ""
+  },
+  {
+    "id": 3,
+    "title": "Architectural Series - Steel",
+    "description": [
+      "Clopay’s full-view series doors are ideal for commercial buildings requiring visibility, access to natural lighting and modern look. They're the perfect choice for everything from restaurants and fire stations to service stations and car dealerships.",
+      "These overhead doors are available with aluminum or steel frame construction, providing options that ensure maximum durability and reliability. Customize your door with a wide variety of window, color, design and performance options."
+    ],
+    "images": ["/images/bridgeport/door1.png", "", "", "", ""],
+    "brochure": ""
+  },
+  {
+    "id": 4,
+    "title": "Energy Series with Intellicore®",
+    "description": [
+      "Clopay’s Intellicore insulated overhead doors meet the needs of commercial buildings that require exceptional climate control. They feature polyurethane insulation which helps keep the building’s interior cooler in summer and warmer in winter.",
+      "Our energy-efficient commercial doors include stucco or woodgrain embossed steel exteriors with flush, minor ribbed, or raised panel section designs. Ideal applications include warehouses, manufacturing plants, municipal buildings and retail stores."
+    ],
+    "images": ["/images/bridgeport/door1.png", "", "", "", ""],
+    "brochure": ""
+  },
+  {
+    "id": 5,
+    "title": "Energy Series",
+    "description": [
+      "Clopay’s Intellicore insulated overhead doors meet the needs of commercial buildings that require exceptional climate control. They feature polyurethane insulation which helps keep the building’s interior cooler in summer and warmer in winter.",
+      "Our energy-efficient commercial doors include stucco or woodgrain embossed steel exteriors with flush, minor ribbed, or raised panel section designs. Ideal applications include warehouses, manufacturing plants, municipal buildings and retail stores."
+    ],
+    "images": ["/images/bridgeport/door1.png", "", "", "", ""],
+    "brochure": ""
+  }
+]
