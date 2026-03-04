@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../public/logo/oldbk.png";
+import logo from "../public/logo/logo.png";
 import { SwatchIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
 import { Bars3Icon } from "@heroicons/react/24/solid";
@@ -14,12 +14,13 @@ export default function Navbar() {
         <li className="py-2 md:py-3">
           <Link href="/">
             <Image
-              className="w-[100px] h-auto"
+              className="w-[90px] h-auto"
               src={logo}
-              width={300} // ✅ Much larger than display size
-              height={300} // ✅ Keeps it sharp on retina displays
+              width={787}
+              height={241}
               alt="Doors Direct logo"
               quality={100}
+              sizes="100px"
               priority
             />
           </Link>
