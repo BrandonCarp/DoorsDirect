@@ -72,17 +72,17 @@ export default function Navbar() {
         {/* Second Half of nav */}
       </ul>
       <ul className="flex items-center space-x-4 ">
-        <li className="hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_5px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition">
+        <li className="">
           <Link href="/contact" className="  inline md:hidden ">
-            <InboxIcon className="w-6 h-6 " />
+            <InboxIcon className="w-6 h-6 text-red-main hover:text-red-secondary" />
           </Link>
         </li>
-        <li className="hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_5px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition">
+        <li className="">
           <Link
             href="/ezdoor"
-            className="flex  md:text-white md:bg-slate-700 md:p-3 rounded  md:hover:bg-slate-500 "
+            className="flex  md:text-white md:bg-red-main md:p-2 rounded  md:hover:bg-red-secondary "
           >
-            <SwatchIcon className="w-6 h-6 md:w-7 md:h-7 md:mr-1" />
+            <SwatchIcon className="w-6 h-6 md:w-7 md:h-7 md:mr-1 text-red-main hover:text-red-secondary md:hover:text-white md:text-white" />
             <span className="hidden md:inline">Design Your Door</span>
           </Link>
         </li>

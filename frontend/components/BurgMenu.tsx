@@ -5,10 +5,10 @@ export default function BurgMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <li className="inline md:hidden">
+    <li className="inline md:hidden text-red-main hover:text-red-secondary ">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-10 h-10 flex flex-col items-center justify-center gap-[5px] hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition rounded-md p-1"
+        className="w-10 h-10 flex flex-col items-center justify-center gap-[5px]  rounded-md p-1 hover:cursor-pointer"
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         {/* Top bar */}
