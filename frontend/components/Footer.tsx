@@ -13,37 +13,97 @@ export default function Footer() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center py-1 space-y-1">
-        <div className=" border-gray-400 border  w-[80%] mt-3"></div>
-        <h1 className="text-[10px] text-red-main">YOUR TRUSTED DOOR EXPERTS</h1>
-        <form></form>
-
-        <section className="flex flex-col relative space-y-2">
-          <Link
-            className="flex"
-            href={ddSouth}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MapPinIcon className="w-5 h-5 mr-1 mt-[1px]  text-red-main" />{" "}
-            <span className="flex  text-red-main text-sm">
-              Doors Direct South
+      <footer className="bg-neutral-primary-soft">
+        <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+          <div className="md:flex md:justify-between">
+            {/* <div className="mb-6 md:mb-0">
+              <a href="https://flowbite.com/" className="flex items-center">
+                <Image
+                  className="w-[90px] h-auto"
+                  src={logo}
+                  width={787}
+                  height={241}
+                  alt="Doors Direct logo"
+                  quality={100}
+                  sizes="100px"
+                  priority
+                />
+              </a>
+            </div> */}
+            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+              <div>
+                <h2 className="mb-6 text-sm font-semibold text-heading uppercase text-red-main">
+                  Resources
+                </h2>
+                <ul className="text-body font-medium text-red-secondary">
+                  <li className="mb-4">
+                    <Link href="/residential" className="hover:underline">
+                      Residential Doors
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/Commercial" className="hover:underline">
+                      Commercial Doors
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 className="mb-6 text-sm font-semibold text-heading uppercase text-red-main">
+                  Contact
+                </h2>
+                <ul className="text-body font-medium text-red-secondary">
+                  <li className="mb-4">
+                    <a href="tel:8566626666" className="hover:underline ">
+                      Give Us A Call
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/contact" className="hover:underline">
+                      Request A Quote
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 className="mb-6 text-sm font-semibold text-heading uppercase text-red-main">
+                  Legal
+                </h2>
+                <ul className="text-body font-medium text-red-secondary">
+                  <li>
+                    <Link href="/terms" className="hover:underline">
+                      Terms &amp; Conditions
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr className="my-6 border-default sm:mx-auto lg:my-8" />
+          <div className="sm:flex sm:items-center sm:justify-between text-red-main">
+            <span className="text-[13px] text-body ">
+              © 2023 <span className="">Doors Direct™</span>. All Rights
+              Reserved.
             </span>
-          </Link>
-          <Link
-            className="flex"
-            href={ddSouth}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MapPinIcon className="w-5 h-5 mr-1 mt-[1px]  text-red-main" />{" "}
-            <span className="flex  text-red-main text-sm">
-              Doors Direct Union
-            </span>
-          </Link>
-        </section>
-        <h1 className="text-[10px] text-gray-500">© 2026 Doors Direct</h1>
-      </div>
+            <div className="flex flex-col  space-y-2 mt-4 sm:justify-center sm:mt-0 justify-between">
+              <Link
+                href={ddSouth}
+                className="text-body hover:text-heading flex"
+              >
+                <MapPinIcon className="h-5 w-5" />
+                <span className="">Doors Direct South</span>
+              </Link>
+              <Link
+                href={ddUnion}
+                className="text-body hover:text-heading flex"
+              >
+                <MapPinIcon className="h-5 w-5" />
+                <span className="">Doors Direct Union</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

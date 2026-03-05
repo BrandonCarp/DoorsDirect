@@ -1,15 +1,18 @@
-"use client";
 import { useState } from "react";
 
-export default function BurgMenu() {
-  const [isOpen, setIsOpen] = useState(false);
-
+interface BurgMenuProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+export default function BurgMenu({ isOpen, setIsOpen }: BurgMenuProps) {
   return (
-    <li className="inline md:hidden text-red-main hover:text-red-secondary ">
+    <li className=" text-red-main hover:text-red-secondary list-none">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-10 h-10 flex flex-col items-center justify-center gap-[5px]  rounded-md p-1 hover:cursor-pointer"
+        className="w-10 h-10 inline-flex flex-col items-center justify-center gap-[5px]  rounded-md p-1 hover:cursor-pointer md:hidden"
         aria-label={isOpen ? "Close menu" : "Open menu"}
+        aria-controls="navbar-solid"
+        aria-expanded="false"
       >
         {/* Top bar */}
         <span
