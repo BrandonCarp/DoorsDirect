@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../public/logo/logo.png";
+import logo from "../public/logo/logo1.png";
 import { SwatchIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import BurgMenu from "./BurgMenu";
 
@@ -23,7 +23,6 @@ export default function Navbar() {
             alt="Doors Direct logo"
             quality={100}
             sizes="100px"
-            priority
           />
         </Link>
 
