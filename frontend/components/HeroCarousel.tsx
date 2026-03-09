@@ -56,7 +56,7 @@ export default function HeroCarousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative h-[90vh] w-full overflow-hidden">
+    <div className="relative h-[90vh] w-[100vw] overflow-hidden">
       {/* Carousel */}
       <div className="absolute inset-0" ref={emblaRef}>
         <div className="flex h-full touch-pan-y touch-pinch-zoom">
@@ -75,10 +75,10 @@ export default function HeroCarousel() {
       </div>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/35 z-10" />
+      <div className="absolute inset-0 bg-black/35 " />
 
       {/* Hero content */}
-      <div className="absolute inset-0 z-20 flex items-center">
+      <div className="absolute inset-0 z-10 flex items-center">
         <div className="text-left px-4 leading-none">
           <h1 className="text-white font-semibold text-2xl">
             Your Favorite Door Brands

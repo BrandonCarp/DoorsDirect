@@ -6,7 +6,7 @@ import logo from "@/public/logo/logo2.png";
 export default function Hero() {
   return (
     <>
-      <div className="relative h-[90vh] w--[100vw]">
+      <div className="relative h-[90vh] w-[100vw]">
         <Image
           src={extira}
           fill

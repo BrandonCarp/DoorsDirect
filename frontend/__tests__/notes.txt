@@ -1,0 +1,41 @@
+Inside that directory, you can run several commands:
+
+  npx playwright test
+    Runs the end-to-end tests.
+
+  npx playwright test --ui
+    Starts the interactive UI mode.
+
+  npx playwright test --project=chromium
+    Runs the tests only on Desktop Chrome.
+
+  npx playwright test example
+    Runs the tests in a specific file.
+
+  npx playwright test --debug
+    Runs the tests in debug mode.
+
+  npx playwright codegen
+    Auto generate tests with Codegen.
+
+We suggest that you begin by typing:
+
+    npx playwright test
+
+And check out the following files:
+  - .\__tests__\example.spec.ts - Example end-to-end test
+  - .\playwright.config.ts - Playwright Test configuration
+
+Visit https://playwright.dev/docs/intro for more information. ✨
+
+Folder Example :
+__tests__/e2e/
+├── navigation.spec.ts     ← what we just wrote (page loads, navbar)
+├── doors.spec.ts          ← when you add filtering/sorting doors
+├── contact.spec.ts        ← when you build out the contact form fully
+└── ezdoor.spec.ts         ← when you build out that ezdoor section
+
+How to run : 
+npx playwright test navigation.spec.ts  # run just navigation tests
+npx playwright test doors.spec.ts       # run just door tests
+npx playwright test                     # run everything
