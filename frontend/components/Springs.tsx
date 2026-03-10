@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Springs() {
   return (
-    <div className="w-full ">
-      <div className="flex flex-col items-center bg-white mx-10 pt-5 pb-20 rounded-t-lg">
+    <div className="w-full  sm:w-[380px]">
+      <div className="flex flex-col items-center  bg-white mx-10 pt-2 pb-5 rounded-t-lg ">
         <Image
           src={spring}
           alt="Torsion Spring Icon"
@@ -24,13 +24,13 @@ export default function Springs() {
           keep your garage door running safely and smoothly.
         </p>
       </div>
-      <div className="flex flex-col items-center bg-red-main mx-10 pt-10 pb-10  rounded-b-lg space-y-10">
+      <div className="flex flex-col items-center bg-red-main mx-10 pt-10 pb-5  rounded-b-lg space-y-10">
         <p className="max-w-[75%] text-sm text-center text-white text-[17px]">
           Trust our experienced team to take care of all your door needs.
         </p>
         <Link
           href="/commercial"
-          className="rounded mt-2 bg-white text-red-main px-4 py-3 text-sm hover:bg-red-secondary font-semibold "
+          className="rounded  font-semibold bg-white text-red-main px-4 py-3 text-sm hover:bg-red-secondary hover:text-white  "
         >
           Contact Us
         </Link>

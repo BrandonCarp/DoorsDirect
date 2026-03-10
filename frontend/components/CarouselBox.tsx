@@ -1,5 +1,6 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import {
@@ -46,31 +47,37 @@ export default function CarouselBox() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="embla w-full">
+    <div className="embla w-full lg:w-[90%]">
       {/* Carousel viewport */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex touch-pan-y touch-pinch-zoom">
           {displayDoors.map((door) => (
-            <div key={door.id} className="flex-[0_0_100%] min-w-0 px-5">
+            <div key={door.id} className="flex-[0_0_100%] min-w-0 px-5 ">
               {/* Image container */}
-              <div className="relative w-full aspect-[5/3]">
-                <Image
-                  src={door.cover}
-                  fill
-                  alt={door.title}
-                  className="object-contain"
-                />
-              </div>
+              <div className="lg:flex lg:items-stretch sm:gap-6">
+                <div className="relative w-full aspect-[5/3] lg:w-[60%] lg:h-[500px] lg:shrink-0 lg:aspect-auto">
+                  <Image
+                    src={door.cover}
+                    fill
+                    sizes="1000px"
+                    alt={door.title}
+                    className="object-contain "
+                  />
+                </div>
 
-              {/* Title + Short Desc + Learn More Button */}
-              <div className="mt-4 ">
-                <h1 className="font-semibold text-red-main text-lg">
-                  {door.title}
-                </h1>
-                <p className="text-red-main">{door.shortDesc}</p>
-                <button className="rounded mt-2 bg-red-main text-white px-4 py-3 text-sm hover:bg-red-secondary">
-                  Learn More
-                </button>
+                {/* Title + Short Desc + Learn More Button */}
+                <div className="mt-4 lg:mt-0 lg:flex-1 lg:flex lg:flex-col lg:justify-center">
+                  <h1 className="font-semibold text-red-main text-lg lg:text-4xl">
+                    {door.title}
+                  </h1>
+                  <p className="text-red-main md:text-xl ">{door.shortDesc}</p>
+                  <Link
+                    href={door.title}
+                    className="flex justify-center rounded mt-2 bg-red-main text-white px-4 py-3 text-sm hover:bg-red-secondary w-[150px] font-semibold"
+                  >
+                    Learn More
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -78,7 +85,7 @@ export default function CarouselBox() {
       </div>
 
       {/* Dot indicators */}
-      <div className="flex md:hidden gap-2 items-center justify-center mt-4">
+      <div className="flex md:hidden gap-2 items-center justify-center mt-4 ">
         {displayDoors.map((_, index) => (
           <button
             key={index}
@@ -94,7 +101,7 @@ export default function CarouselBox() {
       </div>
 
       {/* Nav buttons*/}
-      <div className="hidden md:flex gap-5 items-center justify-center mt-4">
+      <div className="hidden md:flex gap-5 items-center justify-center mt-4 ">
         <button className="rounded transition" onClick={scrollPrev}>
           <ArrowLongLeftIcon className="h-8 w-8 text-red-main" />
         </button>

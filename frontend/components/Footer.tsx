@@ -68,10 +68,6 @@ export default function Footer() {
           </div>
           <hr className="my-6 border-[1%] border-gray-300 sm:mx-auto lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between text-red-main">
-            <span className="text-[13px] text-body ">
-              © 2023 <span className="">Doors Direct™</span>. All Rights
-              Reserved.
-            </span>
             <div className="flex flex-col  space-y-2 mt-4 sm:justify-center sm:mt-0 justify-between">
               <Link
                 href={ddSouth}
@@ -88,6 +84,10 @@ export default function Footer() {
                 <span className="">Doors Direct Union</span>
               </Link>
             </div>
+            <span className="text-[13px] text-body ">
+              © 2023 <span className="">Doors Direct™</span>. All Rights
+              Reserved.
+            </span>
           </div>
         </div>
       </footer>

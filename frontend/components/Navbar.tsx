@@ -6,17 +6,18 @@ import Link from "next/link";
 import logo from "../public/logo/logo1.png";
 import { SwatchIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import BurgMenu from "./BurgMenu";
+import ezimg from "@/public/images/ezmobilead.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white fixed w-full z-20 top-0 border-b border-gray-200">
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-2">
+    <nav className="bg-white fixed w-full z-20 top-0 ">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-2 border-b border-gray-200">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            className="w-[90px] "
+            className="w-[90px] md:w-[115px] lg:w-[130px] "
             src={logo}
             width={787}
             height={241}
@@ -33,28 +34,28 @@ export default function Navbar() {
         {/* Desktop menu */}
         <div className="hidden md:block ">
           <ul className="flex items-center gap-3 ">
-            <li className="hover:border-b-2 border-red list-none">
+            <li className="hover:border-b-2 border-red-main list-none">
               <Link
                 href="/residential"
-                className="group inline-flex items-center  whitespace-nowrap text-red-main text-lg "
+                className="group inline-flex items-center  whitespace-nowrap text-red-main lg:text-lg "
               >
                 Residential Doors
                 <ChevronDownIcon className="w-6 h-6 transition-transform duration-300 group-hover:rotate-180" />
               </Link>
             </li>
-            <li className="hover:border-b-2 border-red">
+            <li className="hover:border-b-2 border-red-main">
               <Link
                 href="/commercial"
-                className="group inline-flex items-center  whitespace-nowrap text-red-main text-lg"
+                className="group inline-flex items-center  whitespace-nowrap text-red-main lg:text-lg"
               >
                 Commercial Doors
                 <ChevronDownIcon className="w-6 h-6 transition-transform duration-300 group-hover:rotate-180" />
               </Link>
             </li>
-            <li className="hover:border-b-2 border-red">
+            <li className="hover:border-b-2 border-red-main">
               <Link
                 href="/contact"
-                className="group inline-flex items-center  whitespace-nowrap text-red-main text-lg"
+                className="group inline-flex items-center  whitespace-nowrap text-red-main lg:text-lg"
               >
                 Contact
                 <ChevronDownIcon className="w-6 h-6 transition-transform duration-300 group-hover:rotate-180" />
@@ -75,8 +76,7 @@ export default function Navbar() {
 
       {/* Mobile menu dropdown */}
       <div
-        id="mobile-menu"
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-between ${
           isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -108,17 +108,23 @@ export default function Navbar() {
               Contact
             </Link>
           </li>
-          <li>
-            <Link
-              href="/ezdoor"
-              className="flex items-center gap-2 bg-red-main text-white px-4 py-2 rounded hover:bg-red-secondary w-fit"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <SwatchIcon className="w-6 h-6" />
-              <span>Design Your Door</span>
-            </Link>
-          </li>
         </ul>
+        <div className="flex flex-col items-center gap-3 border-l border-gray-300 pl-5">
+          <Image
+            src={ezimg}
+            alt="Clopay EzDoor Promotional Image"
+            className="h-[100px] w-[200px]"
+            quality={100}
+          />
+
+          <Link
+            href="/ezdoor"
+            className="flex items-center gap-2 bg-red-main text-white px-4 py-2 rounded hover:bg-red-secondary w-[150px] whitespace-nowrap"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <span className="">Design Your Door</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );

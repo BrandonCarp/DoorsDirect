@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/logo/logo2.png";
+import logo from "@/public/logo/logo1.png";
 
 export default function HeroCarousel() {
   const images = [
@@ -56,7 +56,7 @@ export default function HeroCarousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative h-[90vh] w-[100vw] overflow-hidden">
+    <div className="relative h-[100vh] w-[100vw] overflow-hidden">
       {/* Carousel */}
       <div className="absolute inset-0" ref={emblaRef}>
         <div className="flex h-full touch-pan-y touch-pinch-zoom">
@@ -78,18 +78,20 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 bg-black/35 " />
 
       {/* Hero content */}
-      <div className="absolute inset-0 z-10 flex items-center">
+      <div className="absolute inset-0 z-10 flex items-center sm:inset-[10%] ">
         <div className="text-left px-4 leading-none">
-          <h1 className="text-white font-semibold text-2xl">
+          <h1 className="text-white font-semibold text-2xl md:text-4xl lg:text-5xl">
             Your Favorite Door Brands
           </h1>
-          <h2 className="text-white text-3xl font-bold">All in One Place</h2>
-          <div className="bg-white w-[150px] sm:w-[150px] rounded-lg px-2 py-2 mt-2 border border-red-main">
+          <h2 className="text-white text-3xl font-bold md:text-5xl">
+            All in One Place
+          </h2>
+          <div className="bg-white w-[150px] md:w-[250px]  rounded-lg px-2 py-2 mt-2 border border-red-main">
             <Image
               className=""
               src={logo}
-              width={787}
-              height={241}
+              width={400}
+              height={400}
               alt="Doors Direct logo"
               quality={100}
               sizes="(max-width: 640px) 120px, 150px"
