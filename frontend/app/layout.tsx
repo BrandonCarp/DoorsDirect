@@ -1,24 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "@/app/globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Logo from "@/public/logo/footerlogo.png";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-roboto",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Doors Direct South LLC",
-  description: "Home Page for Doors Direct South LLC",
+  title: {
+    default: "Doors Direct South LLC",
+    template: "%s | Doors Direct South LLC",
+  },
+  description:
+    "Quality doors for residential and commercial properties. Serving the South with expert installation and top brands.",
+  keywords: ["doors", "garage doors", "residential doors", "commercial doors"],
+  openGraph: {
+    title: "Doors Direct South LLC",
+    description: "Quality doors for residential and commercial properties.",
+    url: "https://yourdomain.com",
+    siteName: "Doors Direct South LLC",
+    type: "website",
+    images: [{ url: `${Logo}`, width: 1200, height: 630 }],
+  },
+  metadataBase: new URL("https://yourdomain.com"),
+  robots: { index: true, follow: true },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden bg-cream-bg`}
+        className={`${roboto.className} antialiased overflow-x-hidden bg-cream-bg`}
       >
         <Navbar />
         {children}

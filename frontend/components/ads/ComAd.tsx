@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function ComAd() {
   return (
     <div className="w-full lg:w-[90%]">
-      <div className="flex-[0_0_100%] min-w-0 px-5">
+      <div className="  px-5">
         <div className="lg:flex   lg:items-stretch sm:gap-6">
-          <div className="relative w-full aspect-[5/3] lg:w-[60%] lg:h-[500px] lg:shrink-0 lg:aspect-auto">
+          <div className="relative w-[100vw] h-[50%]  lg:w-[60%] lg:h-[500px] lg:shrink-0 lg:aspect-auto">
             <Image
               src={Energy}
               fill
@@ -25,7 +25,6 @@ export default function ComAd() {
               commercial garage doors deliver durable, dependable performance
               that keeps your operation moving.
             </p>
-
             <Link
               href="/commercial"
               className="flex justify-center rounded mt-2 bg-red-main text-white px-4 py-3 text-sm hover:bg-red-secondary w-[150px] "

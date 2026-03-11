@@ -86,7 +86,7 @@ export default function HeroCarousel() {
           <h2 className="text-white text-3xl font-bold md:text-5xl">
             All in One Place
           </h2>
-          <div className="bg-white w-[150px] md:w-[250px]  rounded-lg px-2 py-2 mt-2 border border-red-main">
+          <div className="bg-white w-[150px] md:w-[200px]  rounded-lg px-2 py-2 mt-2 border border-red-main">
             <Image
               className=""
               src={logo}
