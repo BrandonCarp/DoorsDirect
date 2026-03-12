@@ -7,6 +7,7 @@ import Doors from "@/components/ads/Doors";
 import Springs from "@/components/ads/Springs";
 import LmAd from "@/components/ads/LmAd";
 import Map from "@/components/shared/map";
+import Services from "@/components/ads/Services";
 
 export default function Home() {
   return (
@@ -14,10 +15,11 @@ export default function Home() {
       {/* <Hero /> */}
       <HeroCarousel />
       <section className=" flex flex-col items-center justify-center mt-10 md:mt-20 gap-20">
+        <Services />
         <CarouselBox />
         <EzAd />
         <ComAd />
-        <LmAd />
+
         <section className="space-y-10 lg:flex lg:gap-5">
           <Springs />
           <Doors />

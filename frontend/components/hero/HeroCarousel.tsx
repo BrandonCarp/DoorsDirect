@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/logo/logo1.png";
+import logo from "@/public/logo/logowh.png";
 
 export default function HeroCarousel() {
   const images = [
@@ -75,7 +75,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/35 " />
+      <div className="absolute inset-0 bg-black/60 " />
 
       {/* Hero content */}
       <div className="absolute inset-0 z-10 flex items-center sm:inset-[10%] ">
@@ -86,7 +86,7 @@ export default function HeroCarousel() {
           <h2 className="text-white text-3xl font-bold md:text-5xl">
             All in One Place
           </h2>
-          <div className="bg-white w-[150px] md:w-[200px]  rounded-lg px-2 py-2 mt-2 border border-red-main">
+          <div className=" w-[150px] md:w-[200px]  rounded-lg px-2 py-2 mt-2 ">
             <Image
               className=""
               src={logo}
