@@ -5,98 +5,99 @@ import { HomeModernIcon } from "@heroicons/react/24/outline";
 
 export default function Services() {
   return (
-    <div className="w-[90%]">
-      <div className="flex flex-col items-center justify-center  space-y-3 bg-white rounded-lg px-10 py-5">
-        <span className="text-red-secondary">Services</span>
-        <span className="text-red-main font-bold">What do we offer ?</span>
-        <p className="text-sm">all of the things lets goooooooo</p>
-        <section className="grid grid-cols-3 gap-4 content-evenly">
+    <div className="w-[320px] sm:w-[90vw]">
+      <div className="flex flex-col items-center justify-center  space-y-3 md:bg-white rounded-md px-5 py-5">
+        <span className="text-red-main">Services</span>
+        <span className="text-red-main font-bold md:text-lg">
+          What do we offer ?
+        </span>
+        <p className="text-sm font-semibold text-red-main mx-3 md:text-xl">
+          Reliable doors, trusted brands,
+          <span> and the parts professionals depend on.</span>
+        </p>
+        <section className=" flex flex-col items-center justify-center gap-8 sm:grid sm:grid-cols-2 md:grid-cols-3  md:content-evenly">
           {/* Service and hours*/}
-          <div>
+          <div className=" bg-white rounded px-5 py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <BuildingStorefrontIcon className="h-6 w-6  text-white  " />
             </div>
-            <span className="font-semibold text-red-main">We're Open</span>
+            <span className="font-semibold text-red-main mt-2">We're Open</span>
             <p className="text-sm ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              magnam vitae repudiandae quia maiores culpa, accusantium id modi
-              quibusdam nihil, facilis vel ratione. Soluta quidem saepe
-              voluptatibus non quaerat ullam.
+              Running into a garage door issue or looking for the right part?
+              Our knowledgeable team is here to help with expert advice and fast
+              service. Visit us Monday–Friday 7–5 and Saturday 7–12.
             </p>
           </div>
           {/* Residential Doors & equipment*/}
-          <div>
+          <div className="bg-white rounded px-5 py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <HomeModernIcon className="h-6 w-6  text-white  " />
             </div>
-            <span className="font-semibold text-red-main">
-              Residential Doors & equipment
+            <span className="font-semibold text-red-main mt-2">
+              Residential Doors
             </span>
             <p className="text-sm ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              magnam vitae repudiandae quia maiores culpa, accusantium id modi
-              quibusdam nihil, facilis vel ratione. Soluta quidem saepe
-              voluptatibus non quaerat ullam.
+              We stock a wide range of residential garage doors including
+              economical non-insulated steel, high R-value insulated doors,
+              vinyl, wood, and classic carriage house styles. Quality options
+              ready for contractors and homeowners alike.
             </p>
           </div>
           {/* Commercial Doors & equipment*/}
-          <div>
+          <div className="bg-white rounded px-5 py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <BuildingOffice2Icon className="h-6 w-6  text-white  " />
             </div>
-            <span className="font-semibold text-red-main">
-              Commercial Doors & Equipment
+            <span className="font-semibold text-red-main mt-2">
+              Commercial Doors
             </span>
             <p className="text-sm ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              magnam vitae repudiandae quia maiores culpa, accusantium id modi
-              quibusdam nihil, facilis vel ratione. Soluta quidem saepe
-              voluptatibus non quaerat ullam.
+              From sectional overhead doors to heavy-duty rolling steel doors,
+              we supply dependable commercial solutions. We also carry loading
+              dock equipment, replacement slats, and door sections to keep
+              businesses operating smoothly.
             </p>
           </div>
           {/* Parts department*/}
-          <div>
+          <div className="bg-white rounded px-5 py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <WrenchScrewdriverIcon className="h-6 w-6  text-white  " />
             </div>
-            <span className="font-semibold text-red-main">
-              Parts department
-            </span>
+            <span className="font-semibold text-red-main mt-2">Springs</span>
             <p className="text-sm ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              magnam vitae repudiandae quia maiores culpa, accusantium id modi
-              quibusdam nihil, facilis vel ratione. Soluta quidem saepe
-              voluptatibus non quaerat ullam.
+              Our spring department is stocked with torsion and extension
+              springs, cables, pulleys, tracks, and rollers. We carry the parts
+              professionals rely on, along with weatherstripping, hardware, and
+              essential door components.
             </p>
           </div>
           {/* Openers, remotes, keypads*/}
-          <div>
+          <div className="bg-white rounded px-5 py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <BuildingStorefrontIcon className="h-6 w-6  text-white  " />
             </div>
-            <span className="font-semibold text-red-main">
-              Openers, remotes, keypads
+            <span className="font-semibold text-red-main mt-2">
+              Openers & Accessories
             </span>
             <p className="text-sm ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              magnam vitae repudiandae quia maiores culpa, accusantium id modi
-              quibusdam nihil, facilis vel ratione. Soluta quidem saepe
-              voluptatibus non quaerat ullam.
+              We carry LiftMaster residential and commercial operators including
+              trolley systems, jackshaft openers, remotes, and wireless keypads.
+              Reliable automation solutions trusted by installers and property
+              owners.
             </p>
           </div>
           {/* Brands we work with*/}
-          <div>
+          <div className="bg-white rounded px-5 py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <BuildingStorefrontIcon className="h-6 w-6  text-white  " />
             </div>
-            <span className="font-semibold text-red-main">
-              Brands we work with
+            <span className="font-semibold text-red-main mt-2">
+              Brands we supply
             </span>
             <p className="text-sm ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              magnam vitae repudiandae quia maiores culpa, accusantium id modi
-              quibusdam nihil, facilis vel ratione. Soluta quidem saepe
-              voluptatibus non quaerat ullam.
+              We supply products from leading manufacturers including Clopay,
+              Wayne Dalton, Haas, C.H.I., Amarr, and LiftMaster. Trusted brands
+              known for durability, performance, and long-lasting quality.
             </p>
           </div>
         </section>
