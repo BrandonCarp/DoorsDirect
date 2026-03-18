@@ -22,7 +22,7 @@ export default function Footer() {
                 <h2 className="mb-6 text-sm font-semibold text-heading uppercase text-red-main">
                   Resources
                 </h2>
-                <ul className="text-body font-medium text-red-main">
+                <ul className="text-body  text-red-main">
                   <li className="mb-4">
                     <Link href="/residential" className="hover:underline">
                       Residential Doors
@@ -39,7 +39,7 @@ export default function Footer() {
                 <h2 className="mb-6 text-sm font-semibold text-heading uppercase text-red-main">
                   Contact
                 </h2>
-                <ul className="text-body font-medium text-red-main ">
+                <ul className="text-body  text-red-main ">
                   <li className="mb-4">
                     <a href="tel:8566626666" className="hover:underline ">
                       Give Us A Call
@@ -56,7 +56,7 @@ export default function Footer() {
                 <h2 className="mb-6 text-sm font-semibold text-heading uppercase text-red-main">
                   Legal
                 </h2>
-                <ul className="text-body font-medium text-red-main">
+                <ul className="text-body  text-red-main">
                   <li>
                     <Link href="/terms" className="hover:underline ">
                       Terms &amp; Conditions
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
           <hr className="my-6 border-[1%] border-gray-300 sm:mx-auto lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between text-red-main">
-            <div className="flex flex-col  space-y-2 mt-4 sm:justify-center sm:mt-0 justify-between">
+            <div className="flex flex-col  space-y-2 my-5 sm:justify-center sm:mt-0 justify-between">
               <Link
                 href={ddSouth}
                 className="text-body hover:text-heading flex"
@@ -84,7 +84,7 @@ export default function Footer() {
                 <span className="">Doors Direct Union</span>
               </Link>
             </div>
-            <span className="text-[13px] text-body ">
+            <span className="text-[13px] text-body  ">
               © 2023 <span className="">Doors Direct™</span>. All Rights
               Reserved.
             </span>

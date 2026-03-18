@@ -75,18 +75,18 @@ export default function HeroCarousel() {
       </div>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60 " />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/20" />
 
       {/* Hero content */}
-      <div className="absolute inset-0 z-10 flex items-center sm:inset-[10%] ">
+      <div className="absolute inset-0 mb-80  z-10 flex items-center sm:inset-[10%] ">
         <div className="text-left px-4 leading-none">
-          <h1 className="text-white font-semibold text-2xl md:text-4xl lg:text-5xl">
+          <h1 className="text-white font-bold text-2xl md:text-4xl lg:text-5xl">
             Your Favorite Door Brands
           </h1>
           <h2 className="text-white text-3xl font-bold md:text-5xl">
             All in One Place
           </h2>
-          <div className=" w-[150px] md:w-[200px]  rounded-lg px-2 py-2 mt-2 ">
+          {/* <div className=" w-[150px] md:w-[200px]  rounded-lg px-2 py-2 mt-2 ">
             <Image
               className=""
               src={logo}
@@ -96,10 +96,10 @@ export default function HeroCarousel() {
               quality={100}
               sizes="(max-width: 640px) 120px, 150px"
             />
-          </div>
+          </div> */}
           <Link
             href="/door-link"
-            className="inline-block px-4 py-3 rounded mt-5 bg-white text-red-main border border-red-main hover:text-white hover:bg-red-main"
+            className="inline-block px-4 py-3 text-xl rounded mt-10 bg-white text-red-main border border-red-main hover:text-white hover:bg-red-main"
           >
             Shop Now
           </Link>

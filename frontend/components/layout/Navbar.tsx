@@ -1,10 +1,13 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/logo/logo1.png";
-import { SwatchIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import {
+  SwatchIcon,
+  ChevronDownIcon,
+  PaintBrushIcon,
+} from "@heroicons/react/24/outline";
 import BurgMenu from "@/components/layout/BurgMenu";
 import ezimg from "@/public/images/ezmobilead.png";
 
@@ -70,7 +73,7 @@ export default function Navbar() {
                 href="/contact"
                 className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg"
               >
-                Contact
+                Order Online
               </Link>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-main group-hover:w-full transition-all duration-300" />
             </li>
@@ -80,8 +83,8 @@ export default function Navbar() {
                 href="/ezdoor"
                 className="flex items-center gap-1 bg-red-main text-white px-4 py-2 rounded hover:bg-red-secondary whitespace-nowrap"
               >
-                <SwatchIcon className="w-6 h-6" />
-                <span>Design Your Door</span>
+                <PaintBrushIcon className="w-6 h-6" />
+                <span>Visualize Your Door</span>
               </Link>
             </li>
           </ul>
@@ -94,8 +97,8 @@ export default function Navbar() {
           isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="flex flex-col gap-4 p-4 bg-white border-t border-gray-200">
-          <li>
+        <ul className="flex flex-col gap-4 p-4 bg-white ">
+          <li className="border-b border-gray-300">
             <Link
               href="/residential"
               className="block text-red-main hover:text-red-main py-2"
@@ -104,7 +107,7 @@ export default function Navbar() {
               Residential Doors
             </Link>
           </li>
-          <li>
+          <li className="border-b border-gray-300">
             <Link
               href="/commercial"
               className="block text-red-main hover:text-red-main py-2"
@@ -113,7 +116,7 @@ export default function Navbar() {
               Commercial Doors
             </Link>
           </li>
-          <li>
+          <li className="border-b border-gray-300">
             <Link
               href="/operators"
               className="block text-red-main hover:text-red-main py-2"
@@ -122,13 +125,13 @@ export default function Navbar() {
               Operators
             </Link>
           </li>
-          <li>
+          <li className="border-b border-gray-300">
             <Link
               href="/contact"
               className="block text-red-main hover:text-red-main py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              Order Online
             </Link>
           </li>
         </ul>
