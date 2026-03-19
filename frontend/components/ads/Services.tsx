@@ -28,7 +28,6 @@ export default function Services() {
         </div>
 
         <section className=" flex flex-col items-center justify-center gap-8 sm:grid sm:grid-cols-2 md:grid-cols-3  md:content-evenly text-red-main">
-          {/* Service and hours*/}
           <div className=" bg-white rounded px-5 py-2 md:py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <BuildingStorefrontIcon className="h-6 w-6  text-white  " />
@@ -40,7 +39,7 @@ export default function Services() {
               to 5 or Saturday 7 to 12 and get back on track today.
             </p>
           </div>
-          {/* Residential Doors & equipment*/}
+
           <div className="bg-white rounded px-5 py-2 md:py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <HomeModernIcon className="h-6 w-6  text-white  " />
@@ -53,7 +52,7 @@ export default function Services() {
               ready for contractors and homeowners alike.
             </p>
           </div>
-          {/* Commercial Doors & equipment*/}
+
           <div className="bg-white rounded px-5 py-2 md:py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <BuildingOffice2Icon className="h-6 w-6  text-white  " />
@@ -66,7 +65,7 @@ export default function Services() {
               businesses operating smoothly.
             </p>
           </div>
-          {/* Parts department*/}
+
           <div className="bg-white rounded px-5 py-2 md:py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <WrenchScrewdriverIcon className="h-6 w-6  text-white  " />
@@ -79,7 +78,7 @@ export default function Services() {
               essential door components.
             </p>
           </div>
-          {/* Openers, remotes, keypads*/}
+
           <div className="bg-white rounded px-5 py-2 md:py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <Image
@@ -99,7 +98,7 @@ export default function Services() {
               owners.
             </p>
           </div>
-          {/* Brands we work with*/}
+
           <div className="bg-white rounded px-5 py-2 md:py-5 flex flex-col ">
             <div className="bg-red-main w-9 h-9  flex items-center justify-center rounded-full ">
               <NewspaperIcon className="h-6 w-6  text-white  " />
@@ -116,5 +115,3 @@ export default function Services() {
     </div>
   );
 }
-// 5. Openers, remotes, keypads
-// 6. Brands we work with

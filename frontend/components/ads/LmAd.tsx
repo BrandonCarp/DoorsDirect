@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function LmAd() {
   return (
     <div className="w-full flex flex-col items-center">
-      {/* Image: ~90vw on mobile, ~70vw on lg+ */}
       <div className="relative w-[90vw] h-[90vw] lg:w-[70vw] lg:h-[70vh]">
         <Image
           src={lm}
@@ -16,7 +15,6 @@ export default function LmAd() {
         />
       </div>
 
-      {/* Text content aligned to match image width */}
       <div className="flex flex-col mt-4 w-[90vw] lg:w-[70vw]">
         <h1 className="font-semibold text-red-main text-lg lg:text-4xl">
           Lift Master Operators & Accessories
@@ -27,7 +25,7 @@ export default function LmAd() {
           dependable performance for residential and commercial applications.
         </p>
         <Link
-          href="/commercial"
+          href="/commercial-garage-doors"
           className="flex justify-center rounded mt-4 bg-red-main text-white px-4 py-3 text-sm hover:bg-red-secondary w-[150px]"
         >
           Browse Doors

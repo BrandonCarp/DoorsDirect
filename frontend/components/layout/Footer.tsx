@@ -1,15 +1,12 @@
 "use client";
-import Image from "next/image";
+
 import Link from "next/link";
-import logo from "@/public/logo/footerlogo.png";
+
 import { MapPinIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
 
 export default function Footer() {
   const ddSouth = "https://maps.app.goo.gl/aZaeDJccZBG1TKo17";
   const ddUnion = "https://maps.app.goo.gl/L9JSJL7M7jBc7sUr6";
-
-  const [value, setValue] = useState("");
 
   return (
     <>
@@ -24,12 +21,18 @@ export default function Footer() {
                 </h2>
                 <ul className="text-body  text-red-main">
                   <li className="mb-4">
-                    <Link href="/residential" className="hover:underline">
+                    <Link
+                      href="/residential-garage-doors"
+                      className="hover:underline"
+                    >
                       Residential Doors
                     </Link>
                   </li>
                   <li>
-                    <Link href="/Commercial" className="hover:underline">
+                    <Link
+                      href="/Commercial-garage-doors"
+                      className="hover:underline"
+                    >
                       Commercial Doors
                     </Link>
                   </li>
@@ -46,7 +49,7 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="/contact" className="hover:underline">
+                    <a href="/contact-us" className="hover:underline">
                       Request A Quote
                     </a>
                   </li>
@@ -58,7 +61,7 @@ export default function Footer() {
                 </h2>
                 <ul className="text-body  text-red-main">
                   <li>
-                    <Link href="/terms" className="hover:underline ">
+                    <Link href="/" className="hover:underline ">
                       Terms &amp; Conditions
                     </Link>
                   </li>
@@ -85,7 +88,7 @@ export default function Footer() {
               </Link>
             </div>
             <span className="text-[13px] text-body  ">
-              © 2023 <span className="">Doors Direct™</span>. All Rights
+              © 2026 <span className="">Doors Direct™</span>. All Rights
               Reserved.
             </span>
           </div>

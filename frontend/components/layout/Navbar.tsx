@@ -38,7 +38,7 @@ export default function Navbar() {
           <ul className="flex items-center gap-3">
             <li className="relative group">
               <Link
-                href="/residential"
+                href="/residential-garage-doors"
                 className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
               >
                 Residential
@@ -49,7 +49,7 @@ export default function Navbar() {
 
             <li className="relative group">
               <Link
-                href="/commercial"
+                href="/commercial-garage-doors"
                 className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg"
               >
                 Commercial
@@ -59,7 +59,7 @@ export default function Navbar() {
             </li>
             <li className="relative group">
               <Link
-                href="/residential"
+                href="/liftmaster-products"
                 className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
               >
                 Operators
@@ -70,7 +70,7 @@ export default function Navbar() {
 
             <li className="relative group mr-3">
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg"
               >
                 Order Online

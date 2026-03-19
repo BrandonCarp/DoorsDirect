@@ -9,9 +9,9 @@ export default function EzAd() {
       <div className="flex-[0_0_100%] min-w-0 px-5">
         <div className="lg:flex   lg:items-stretch sm:gap-6">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="font-semibold text-red-main text-xl md:text-2xl">
+            <p className="font-semibold text-red-main text-xl md:text-2xl">
               Bring Your Door To Life With
-            </h1>
+            </p>
             <h2 className="font-semibold text-red-main text-2xl md:text-3xl">
               EZDoor™
             </h2>

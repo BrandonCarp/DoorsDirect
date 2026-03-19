@@ -15,7 +15,7 @@ export default function Springs() {
           quick answers, product details, and expert guidance.
         </p>
         <Link
-          href="/contact"
+          href="/contact-us"
           className="rounded  font-semibold bg-red-main text-white px-4 py-3 text-sm hover:bg-red-secondary hover:text-white  "
         >
           Contact Us

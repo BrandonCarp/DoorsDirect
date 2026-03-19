@@ -67,9 +67,9 @@ export default function CarouselBox() {
 
                 {/* Title + Short Desc + Learn More Button */}
                 <div className="mt-4 lg:mt-0 lg:flex-1 lg:flex lg:flex-col lg:justify-center">
-                  <h1 className="font-semibold text-red-main text-lg lg:text-4xl">
+                  <p className="font-semibold text-red-main text-lg lg:text-4xl">
                     {door.title}
-                  </h1>
+                  </p>
                   <p className="text-red-main md:text-xl ">{door.shortDesc}</p>
                   <Link
                     href={door.title}

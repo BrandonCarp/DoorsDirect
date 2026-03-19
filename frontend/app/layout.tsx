@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   description:
     "Quality doors for residential and commercial properties. Serving the South with expert installation and top brands.",
-  keywords: ["doors", "garage doors", "residential doors", "commercial doors"],
+
   openGraph: {
     title: "Doors Direct South LLC",
     description: "Quality doors for residential and commercial properties.",

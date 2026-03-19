@@ -2,78 +2,85 @@
   {
     "id": 1,
     "title": "VertiStack® Clear Door",
-    "shortDesc": "",
+    "shortDesc": "A modern glass door that stacks vertically above the opening, eliminating ceiling tracks and keeping the ceiling clear while offering a sleek, customizable design.",
     "description": "The VertiStack® Clear glass overhead door features a unique construction with sections that stack above the opening, eliminating the need for overhead tracks. This allows for a clear ceiling and won't conflict with mechanical, electrical or plumbing fixtures located in the ceiling. Designed with a clean, modern aesthetic, there are no hinges or exposed tracks or cables, and it is available with a variety of aluminum finishes and window materials. VertiStack clear is available with a motor operator or a manual operated hand chain. ",
-    "cover": "/images/bridgeport/door1.png",
+    "cover": "/DoorImages/CommDoors/vertistackclear.png",
     "gallery": "https://www.clopaydoor.com/image-gallery/vertistack-clear",
-    "brochure": "https://literature.clopay.com/pdf_files/CMDC-VS904-22.pdf"
+    "brochure": "https://literature.clopay.com/pdf_files/CMDC-VS904-22.pdf",
+    "link": "/commercial-garage-doors/verti-stack"
   },
   {
     "id": 2,
     "title": "Architectural Series - Aluminum",
-    "shortDesc": "",
+    "shortDesc": "Full-view aluminum doors designed for visibility and natural light, ideal for commercial spaces with customizable styles and finishes.",
     "description": "Clopay’s aluminum full-view doors are ideal for commercial buildings requiring visibility, access to natural lighting and a modern look. They're a great choice for applications ranging from restaurants and fire stations to car dealerships. These overhead doors come with an aluminum frame construction and also come in solid aluminum if privacy is preferred. You can also customize your door with a wide variety of window, color, design and performance options.",
-    "cover": "/images/bridgeport/door1.png",
+    "cover": "/DoorImages/CommDoors/archalum.png",
     "gallery": "https://www.clopaydoor.com/image-gallery/architectural-series-aluminum",
-    "brochure": "https://literature.clopay.com/pdf_files/CMDC-IDEA-15.pdf"
+    "brochure": "https://literature.clopay.com/pdf_files/CMDC-IDEA-15.pdf",
+    "link": "/commercial-garage-doors/verti-stack"
   },
   {
     "id": 3,
     "title": "Architectural Series - Steel",
-    "shortDesc": "",
+    "shortDesc": "Durable full-view doors with steel or aluminum frames, combining strength, visibility, and flexible design options for commercial use.",
     "description": [
       "Clopay’s full-view series doors are ideal for commercial buildings requiring visibility, access to natural lighting and modern look. They're the perfect choice for everything from restaurants and fire stations to service stations and car dealerships.",
       "These overhead doors are available with aluminum or steel frame construction, providing options that ensure maximum durability and reliability. Customize your door with a wide variety of window, color, design and performance options."
     ],
-    "cover": "/images/bridgeport/door1.png",
+    "cover": "/DoorImages/CommDoors/archsteel.png",
     "gallery": "https://www.clopaydoor.com/image-gallery/architectural-series-steel",
-    "brochure": "https://literature.clopay.com/pdf_files/CMDC-3158-3159-16.pdf"
+    "brochure": "https://literature.clopay.com/pdf_files/CMDC-3158-3159-16.pdf",
+    "link": "/commercial-garage-doors/verti-stack"
   },
   {
     "id": 4,
     "title": "Extreme™ Series",
-    "shortDesc": "",
+    "shortDesc": "High-speed, heavy-duty commercial doors built for durability and frequent use, ideal for high-traffic environments like warehouses and emergency facilities.",
     "description": [
       "The Clopay Extreme™ Series combines high-strength durability with the ability to open at 24” per second. Powered by the robust LiftMaster opener, the Extreme™ Series- commercial, higher speed doors are a great fit for emergency facilities, distribution center warehouses, car dealerships and much more. Manufactured with heavy duty hardware, these low profile overhead doors boast five times the spring life of an average commercial sectional door for optimal performance."
     ],
-    "cover": "/images/bridgeport/door1.png",
+    "cover": "/DoorImages/CommDoors/extreme.png",
     "gallery": "https://www.clopaydoor.com/image-gallery/extreme-series",
-    "brochure": "https://literature.clopay.com/pdf_files/CMDC-EXSERIES-22.pdf"
+    "brochure": "https://literature.clopay.com/pdf_files/CMDC-EXSERIES-22.pdf",
+    "link": "/commercial-garage-doors/verti-stack"
   },
   {
     "id": 5,
     "title": "Energy Series with Intellicore®",
-    "shortDesc": "",
+    "shortDesc": "Highly insulated doors with polyurethane cores for superior temperature control, perfect for energy-efficient commercial buildings.",
     "description": [
       "Clopay’s Intellicore insulated overhead doors meet the needs of commercial buildings that require exceptional climate control. They feature polyurethane insulation which helps keep the building’s interior cooler in summer and warmer in winter.",
       "Our energy-efficient commercial doors include stucco or woodgrain embossed steel exteriors with flush, minor ribbed, or raised panel section designs. Ideal applications include warehouses, manufacturing plants, municipal buildings and retail stores."
     ],
-    "cover": "/images/bridgeport/door1.png",
+    "cover": "/DoorImages/CommDoors/intelenergy.png",
     "gallery": "https://www.clopaydoor.com/image-gallery/energy-series-with-intellicore",
-    "brochure": "https://literature.clopay.com/pdf_files/CMDC-3715-07.pdf"
+    "brochure": "https://literature.clopay.com/pdf_files/CMDC-3715-07.pdf",
+    "link": "/commercial-garage-doors/verti-stack"
   },
   {
     "id": 6,
     "title": "Energy Series",
-    "shortDesc": "",
+    "shortDesc": "Insulated commercial doors designed to improve energy efficiency and maintain indoor temperatures, with multiple design options.",
     "description": [
       "Clopay’s Intellicore insulated overhead doors meet the needs of commercial buildings that require exceptional climate control. They feature polyurethane insulation which helps keep the building’s interior cooler in summer and warmer in winter.",
       "Our energy-efficient commercial doors include stucco or woodgrain embossed steel exteriors with flush, minor ribbed, or raised panel section designs. Ideal applications include warehouses, manufacturing plants, municipal buildings and retail stores."
     ],
-    "cover": "/images/bridgeport/door1.png",
+    "cover": "/DoorImages/CommDoors/energy.png",
     "gallery": "https://www.clopaydoor.com/image-gallery/energy-series",
-    "brochure": "https://literature.clopay.com/pdf_files/CMDC-3154-3155-15.pdf"
+    "brochure": "https://literature.clopay.com/pdf_files/CMDC-3154-3155-15.pdf",
+    "link": "/commercial-garage-doors/verti-stack"
   },
   {
     "id": 7,
     "title": "Industrial Series",
-    "shortDesc": "",
+    "shortDesc": "Reliable and versatile industrial doors offering durability, insulation options, and customizable designs for warehouses and heavy-duty applications.",
     "description": [
       "Clopay Industrial Series overhead doors provide a combination of performance and reliability for a range of industrial applications. For increased energy efficiency, polystyrene insulated insulation with a vinyl or steel backer, is available.",
       "These commercial doors offer an assortment of flush, ribbed or raised panel designs in a variety of colors, textures, windows and steel gauges. Ideal applications include warehouses, loading docks and industrial and agricultural facilities."
     ],
-    "cover": "/images/bridgeport/door1.png",
+    "cover": "/DoorImages/CommDoors/industrial.png",
     "gallery": "https://www.clopaydoor.com/image-gallery/industrial-series",
-    "brochure": "https://literature.clopay.com/pdf_files/CMDC-0524-02.pdf"
+    "brochure": "https://literature.clopay.com/pdf_files/CMDC-0524-02.pdf",
+    "link": "/commercial-garage-doors/verti-stack"
   }
 ]
