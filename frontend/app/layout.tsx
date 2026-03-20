@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Logo from "@/public/logo/footerlogo.png";
+import GarageDoorTransition from "@/components/shared/DoorTransition";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -41,9 +42,11 @@ export default function RootLayout({
       <body
         className={`${roboto.className} antialiased overflow-x-hidden bg-cream-bg`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <GarageDoorTransition>
+          <Navbar />
+          {children}
+          <Footer />
+        </GarageDoorTransition>
       </body>
     </html>
   );

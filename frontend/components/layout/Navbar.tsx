@@ -68,24 +68,24 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-main group-hover:w-full transition-all duration-300" />
             </li>
 
+            <li className="relative group ">
+              <Link
+                href="/contact-us"
+                className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg"
+              >
+                Springs
+              </Link>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-main group-hover:w-full transition-all duration-300" />
+            </li>
+
             <li className="relative group mr-3">
               <Link
                 href="/contact-us"
                 className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg"
               >
-                Order Online
+                Request a Quote
               </Link>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-main group-hover:w-full transition-all duration-300" />
-            </li>
-
-            <li>
-              <Link
-                href="/ezdoor"
-                className="flex items-center gap-1 bg-red-main text-white px-4 py-2 rounded hover:bg-red-secondary whitespace-nowrap"
-              >
-                <PaintBrushIcon className="w-6 h-6" />
-                <span>Visualize Your Door</span>
-              </Link>
             </li>
           </ul>
         </div>
