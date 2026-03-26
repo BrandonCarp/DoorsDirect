@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "@/app/globals.css";
 import Navbar from "@/components/layout/Navbar";
+import Nav2 from "@/components/layout/Nav2";
 import Footer from "@/components/layout/Footer";
 import Logo from "@/public/logo/footerlogo.png";
 import GarageDoorTransition from "@/components/shared/DoorTransition";
@@ -15,23 +16,29 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: {
-    default: "Doors Direct South LLC",
-    template: "%s | Doors Direct South LLC",
+    default: "Doors Direct LLC",
+    template: "%s | Doors Direct LLC",
   },
   description:
-    "Quality doors for residential and commercial properties. Serving the South with expert installation and top brands.",
-
-  openGraph: {
-    title: "Doors Direct South LLC",
-    description: "Quality doors for residential and commercial properties.",
-    url: "https://yourdomain.com",
-    siteName: "Doors Direct South LLC",
-    type: "website",
-    images: [{ url: `${Logo}`, width: 1200, height: 630 }],
+    "Doors Direct LLC — residential & commercial doors and parts in Pennsauken & Union, New Jersey. Top brands, expert service.",
+  metadataBase: new URL("https://doorsdirect.com"),
+  alternates: {
+    canonical: "https://doorsdirect.com",
   },
-  metadataBase: new URL("https://yourdomain.com"),
+  openGraph: {
+    title: "Doors Direct LLC",
+    description: "Residential & commercial doors in Pennsauken & Union, NJ.",
+    url: "https://doorsdirect.com",
+    siteName: "Doors Direct LLC",
+    type: "website",
+    images: [{ url: "/logo/footerlogo.png", width: 1200, height: 630 }],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
   robots: { index: true, follow: true },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{

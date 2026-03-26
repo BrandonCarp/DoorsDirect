@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/logo/logo1.png";
-import { PhoneIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon } from "@heroicons/react/24/outline";
 import BurgMenu from "@/components/layout/BurgMenu";
 import ezimg from "@/public/images/ezmobilead.png";
 import NavItem from "./NavItem";
@@ -48,18 +48,41 @@ const navItems = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isResiMenu, setIsResiMenu] = useState(false);
-  const [isCommMenu, setIsCommMenu] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-white sticky w-[100vw] z-20 top-0 ">
-      <div className="hidden md:flex bg-cream-bg p-3  flex-row-reverse px-20">
+    <nav
+      className={`fixed w-full z-20 top-0 transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className="hidden md:flex bg-cream-bg p-3  flex-row-reverse px-10">
         <span className="flex gap-3 hover:text-red-main cursor-pointer">
           <PhoneIcon className="h-5 w-5" />
           Call Us
         </span>
       </div>
-      <div className="w-full flex items-center justify-between mx-auto  p-3 px-10 border border-gray-200">
+      <div className="w-full flex items-center justify-between mx-auto p-3  border border-gray-200 bg-white">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
@@ -75,73 +98,20 @@ export default function Navbar() {
 
         {/* Mobile burger menu button */}
         <BurgMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
-        {/* <button
-        onClick={() => setIsOpen(!isOpen)} */}
 
         {/* Desktop menu */}
-        <div className="hidden md:flex gap-10 ">
+        <div className="hidden md:block">
           <ul className="flex items-center gap-10 lg:gap-20">
             {navItems.map((item) => (
               <NavItem key={item.label} label={item.label} links={item.links} />
             ))}
           </ul>
-
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-main group-hover:w-full transition-all duration-300" />
         </div>
-        <Link
-          href="/contact-us"
-          className="hidden md:flex items-center whitespace-nowrap text-white bg-red-main px-3 py-1 rounded lg:text-lg hover:bg-red-secondary"
-        >
-          Request a Quote
-        </Link>
-      </div>
-      {/* DROP DOWN MENUS */}
-
-      {/* Residential Drop Down */}
-      <div
-        className={`  overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-between ${
-          isResiMenu ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <ul className="flex flex-col gap-4 p-4 bg-white ">
-          <li className="border-b border-gray-300">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
-            >
-              Residential Doors
-            </button>
-          </li>
-          <li className="border-b border-gray-300">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
-            >
-              Commercial Doors
-            </button>
-          </li>
-          <li className="border-b border-gray-300">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
-            >
-              Operators
-            </button>
-          </li>
-          <li className="border-b border-gray-300">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
-            >
-              Order Online
-            </button>
-          </li>
-        </ul>
       </div>
 
       {/* Mobile menu dropdown */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-between ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out flex items-center  justify-between ${
           isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
