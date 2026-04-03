@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Rob S",
+    "comment": "Huge selection. Great prices. Prompt service. Easy pick up. Fast quotes. The best door supplier in the area.",
+    "rating": "⭐⭐⭐⭐⭐"
+  },
+  {
+    "id": 2,
+    "name": "All About Garage Doors, INC",
+    "comment": "Doors Direct is a great company! They are always making sure that their customers are happy and satisfied! I highly recommend them and I always feel at home when I am there. No matter what day or what time they're always making sure to be there for you! Thank you Tom and H for the best customer service!!",
+    "rating": "⭐⭐⭐⭐⭐"
+  },
+  {
+    "id": 3,
+    "name": "John Door",
+    "comment": "Search no further, I highly recommend Doors Direct South they have provided our company (John Door, LLC) with exceptional service, reliable parts and speedy delivery. THANKS keep up the good work your doing a great job.",
+    "rating": "⭐⭐⭐⭐⭐"
+  },
+  {
+    "id": 4,
+    "name": "Keith ODonnel",
+    "comment": "The staff extremely helpful from the guys in the office to the warehosuer workers, they're fast and efficient 👍",
+    "rating": "⭐⭐⭐⭐⭐"
+  },
+  {
+    "id": 5,
+    "name": "Kirks Doors",
+    "comment": "Great customer service and pricing!",
+    "rating": "⭐⭐⭐⭐⭐"
+  },
+  {
+    "id": 6,
+    "name": "Luis Santos",
+    "comment": "The staff extremely helpful from the guys in the office to the warehosuer workers, they're fast and efficient 👍",
+    "rating": "⭐⭐⭐⭐⭐"
+  }
+]

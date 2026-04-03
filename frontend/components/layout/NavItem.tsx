@@ -50,7 +50,7 @@ export default function NavItem({ label, links }: Props) {
               <Link
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-2 text-red-main hover:bg-gray-50 whitespace-nowrap"
+                className="block px-4 py-2 text-red-main hover:bg-gray-50 whitespace-nowrap "
               >
                 {link.label}
               </Link>

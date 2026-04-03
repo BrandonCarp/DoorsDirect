@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ImageCarousel() {
   const images = [
-    { id: 1, title: "Doors Direct South Logo Sign", image: "/company/1.4.jpg" },
+    { id: 1, title: "Doors Direct South Logo Sign", image: "/company/1.png" },
     { id: 2, title: "Stock Commercial Sections", image: "/company/2.jpg" },
     { id: 3, title: "Stock Tracks", image: "/company/3.jpg" },
     { id: 4, title: "Stock Residential Sections", image: "/company/4.jpg" },

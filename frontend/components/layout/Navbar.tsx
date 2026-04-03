@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/logo/logo1.png";
-import { PhoneIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import BurgMenu from "@/components/layout/BurgMenu";
 import ezimg from "@/public/images/ezmobilead.png";
 import NavItem from "./NavItem";
@@ -17,6 +17,7 @@ const navItems = [
       { label: "CHI", href: "/residential/CHI" },
       { label: "Haas", href: "/residential/HAAS" },
       { label: "Amaar", href: "/residential/AMAAR" },
+      { label: "Wayne Dalton", href: "/residential/WAYNEDALTON" },
     ],
   },
   {
@@ -27,6 +28,7 @@ const navItems = [
       { label: "CHI", href: "/residential/CHI" },
       { label: "Haas", href: "/residential/HAAS" },
       { label: "Amaar", href: "/residential/AMAAR" },
+      { label: "Overhead", href: "/residential/OVERHEAD" },
     ],
   },
   {
@@ -53,17 +55,11 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white sticky w-[100vw] z-20 top-0 ">
-      <div className="hidden md:flex bg-cream-bg p-3  flex-row-reverse px-20">
-        <span className="flex gap-3 hover:text-red-main cursor-pointer">
-          <PhoneIcon className="h-5 w-5" />
-          Call Us
-        </span>
-      </div>
-      <div className="w-full flex items-center justify-between mx-auto  p-3 px-10 border border-gray-200">
+      <div className="w-full flex items-center justify-between mx-auto  py-5 px-10 border border-gray-200">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            className="w-[90px] md:w-[115px] lg:w-[130px]"
+            className="w-[115px] lg:w-[145px] lg:w-[160px]"
             src={logo}
             width={787}
             height={241}
@@ -73,14 +69,9 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Mobile burger menu button */}
-        <BurgMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
-        {/* <button
-        onClick={() => setIsOpen(!isOpen)} */}
-
         {/* Desktop menu */}
-        <div className="hidden md:flex gap-10 ">
-          <ul className="flex items-center gap-10 lg:gap-20">
+        <div className="hidden lg:flex  ">
+          <ul className="flex items-center  lg:gap-5">
             {navItems.map((item) => (
               <NavItem key={item.label} label={item.label} links={item.links} />
             ))}
@@ -88,12 +79,21 @@ export default function Navbar() {
 
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-main group-hover:w-full transition-all duration-300" />
         </div>
-        <Link
-          href="/contact-us"
-          className="hidden md:flex items-center whitespace-nowrap text-white bg-red-main px-3 py-1 rounded lg:text-lg hover:bg-red-secondary"
-        >
-          Request a Quote
-        </Link>
+        <div className="flex gap-5">
+          <Link
+            href="/contact-us"
+            className="hidden lg:flex items-center whitespace-nowrap text-white bg-red-main px-3 py-1 rounded lg:text-lg hover:bg-red-secondary"
+          >
+            Request a Quote
+          </Link>
+          <Link
+            href="/contact-us"
+            className="hidden lg:flex items-center whitespace-nowrap text-white bg-red-secondary px-3 py-1 rounded lg:text-lg hover:bg-red-secondary"
+          >
+            <PhoneIcon className="h-6 w-6 mr-2" /> Call Now
+          </Link>
+        </div>
+        <BurgMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
       </div>
       {/* DROP DOWN MENUS */}
 
@@ -141,7 +141,7 @@ export default function Navbar() {
 
       {/* Mobile menu dropdown */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-between ${
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-between ${
           isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

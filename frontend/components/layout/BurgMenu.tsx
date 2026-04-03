@@ -6,7 +6,7 @@ interface BurgMenuProps {
 }
 export default function BurgMenu({ isOpen, setIsOpen }: BurgMenuProps) {
   return (
-    <li className=" text-red-main hover:text-red-secondary list-none block md:hidden">
+    <li className=" text-red-main hover:text-red-secondary list-none block lg:hidden ">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-10 h-10 inline-flex flex-col items-center justify-center gap-[5px]  rounded-md p-1 hover:cursor-pointer lg:hidden"

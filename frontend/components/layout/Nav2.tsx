@@ -27,6 +27,7 @@ const navItems = [
       { label: "CHI", href: "/residential/CHI" },
       { label: "Haas", href: "/residential/HAAS" },
       { label: "Amaar", href: "/residential/AMAAR" },
+      { label: "Overhead", href: "/residential/AMAAR" },
     ],
   },
   {
