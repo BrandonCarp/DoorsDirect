@@ -17,7 +17,6 @@ const navItems = [
       { label: "CHI", href: "/residential/CHI" },
       { label: "Haas", href: "/residential/HAAS" },
       { label: "Amaar", href: "/residential/AMAAR" },
-      { label: "Wayne Dalton", href: "/residential/WAYNEDALTON" },
     ],
   },
   {
@@ -71,7 +70,7 @@ export default function Navbar() {
 
         {/* Desktop menu */}
         <div className="hidden lg:flex  ">
-          <ul className="flex items-center  lg:gap-5">
+          <ul className="flex items-center  lg:gap-5 ">
             {navItems.map((item) => (
               <NavItem key={item.label} label={item.label} links={item.links} />
             ))}
@@ -82,13 +81,13 @@ export default function Navbar() {
         <div className="flex gap-5">
           <Link
             href="/contact-us"
-            className="hidden lg:flex items-center whitespace-nowrap text-white bg-red-main px-3 py-1 rounded lg:text-lg hover:bg-red-secondary"
+            className="hidden lg:flex items-center whitespace-nowrap text-white bg-red-main px-3 py-1 rounded  hover:bg-red-secondary lg:text-2xl"
           >
             Request a Quote
           </Link>
           <Link
             href="/contact-us"
-            className="hidden lg:flex items-center whitespace-nowrap text-white bg-red-secondary px-3 py-1 rounded lg:text-lg hover:bg-red-secondary"
+            className="hidden lg:flex items-center whitespace-nowrap text-white bg-red-main px-3 py-1 rounded  hover:bg-red-secondary lg:text-2xl"
           >
             <PhoneIcon className="h-6 w-6 mr-2" /> Call Now
           </Link>
@@ -107,7 +106,7 @@ export default function Navbar() {
           <li className="border-b border-gray-300">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
+              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-xl "
             >
               Residential Doors
             </button>
@@ -149,7 +148,7 @@ export default function Navbar() {
           <li className="border-b border-gray-300">
             <Link
               href="/residential"
-              className="block text-red-main hover:text-red-main py-2"
+              className="block text-red-main hover:text-red-main py-2 "
               onClick={() => setIsMenuOpen(false)}
             >
               Residential Doors

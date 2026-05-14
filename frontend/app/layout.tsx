@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "@/app/globals.css";
 import Navbar from "@/components/layout/Navbar";
-import Nav2 from "@/components/layout/Nav2";
+
 import Footer from "@/components/layout/Footer";
-import Logo from "@/public/logo/footerlogo.png";
-import GarageDoorTransition from "@/components/shared/DoorTransition";
+// import Logo from "@/public/logo/footerlogo.png";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -49,11 +48,9 @@ export default function RootLayout({
       <body
         className={`${roboto.className} antialiased overflow-x-hidden bg-cream-bg`}
       >
-        <GarageDoorTransition>
-          <Navbar />
-          {children}
-          <Footer />
-        </GarageDoorTransition>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

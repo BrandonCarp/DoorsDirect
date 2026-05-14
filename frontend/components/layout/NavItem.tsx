@@ -29,11 +29,11 @@ export default function NavItem({ label, links }: Props) {
     <li ref={ref} className="relative group">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg"
+        className="inline-flex items-center whitespace-nowrap text-red-main lg:text-3xl"
       >
         {label}
         <ChevronDownIcon
-          className={`w-4 h-4 ml-2 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          className={`w-4 h-4 ml-2 transition-transform duration-300  ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-main group-hover:w-full transition-all duration-300" />
@@ -44,7 +44,7 @@ export default function NavItem({ label, links }: Props) {
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="flex flex-col py-2 min-w-[180px]">
+        <ul className="flex flex-col py-2 min-w-[180px] ">
           {links.map((link) => (
             <li key={link.href}>
               <Link
