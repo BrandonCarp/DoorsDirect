@@ -105,7 +105,18 @@ const residentialStock: StockDoor[] = [
     description: "3 Layer Steel Short Panel",
     widths:
       color === "White"
-        ? ["7'0\"", "7'6\"", "8'", "9'", "10'", "12'", "14'", "15'", "16'", "18'"]
+        ? [
+            "7'0\"",
+            "7'6\"",
+            "8'",
+            "9'",
+            "10'",
+            "12'",
+            "14'",
+            "15'",
+            "16'",
+            "18'",
+          ]
         : ["7'6\"", "8'", "9'", "16'"],
     heights:
       color === "White"
@@ -172,6 +183,7 @@ const commercialStock: StockDoor[] = ["524", "524V", "524S", "3200"].map(
 
 const residentialPriceRows: Record<string, PriceRow[]> = {
   T50S: [
+    [7.5, 7, 625.37, 761.8, 852.75],
     [8, 7, 560.37, 696.8, 787.75],
     [9, 7, 595.58, 732.0, 822.95],
     [10, 7, 695.33, 865.49, 979.92],
@@ -224,6 +236,7 @@ const residentialPriceRows: Record<string, PriceRow[]> = {
     [18, 9, 2245.79, 2515.1, 2694.66],
   ].map(toPriceRow),
   "4050": [
+    [7.6, 7, 775.65, 937.72, 1015.02],
     [8, 7, 710.65, 872.72, 950.02],
     [9, 7, 765.5, 927.58, 1004.88],
     [10, 7, 864, 1065.97, 1163.22],
@@ -430,15 +443,15 @@ export default function StockDoorPricingPage() {
   const [track, setTrack] = useState(door.tracks[0]);
   const [spring, setSpring] = useState("Extension");
   const [lock, setLock] = useState("NL");
-  const [finish, setFinish] = useState<(typeof finishOptions)[number]["value"]>(
-    "solid",
-  );
+  const [finish, setFinish] =
+    useState<(typeof finishOptions)[number]["value"]>("solid");
   const [commercialConfig, setCommercialConfig] =
     useState<(typeof commercialConfigOptions)[number]["value"]>("solid15R");
   const [quantity, setQuantity] = useState(1);
 
   function selectType(nextType: "residential" | "commercial") {
-    const nextDoor = nextType === "residential" ? residentialStock[0] : commercialStock[0];
+    const nextDoor =
+      nextType === "residential" ? residentialStock[0] : commercialStock[0];
     setDoorType(nextType);
     setDoorIndex(0);
     setWidth(nextDoor.widths[0]);
@@ -488,8 +501,9 @@ export default function StockDoorPricingPage() {
       ],
       subtotal: base,
       total: base * quantity,
-      basis: commercialConfigOptions.find((option) => option.value === commercialConfig)
-        ?.label,
+      basis: commercialConfigOptions.find(
+        (option) => option.value === commercialConfig,
+      )?.label,
     };
   }, [
     commercialConfig,
@@ -543,7 +557,10 @@ export default function StockDoorPricingPage() {
                   onChange={(value) => selectDoor(Number(value))}
                 >
                   {stock.map((item, index) => (
-                    <option key={`${item.model}-${item.color}-${index}`} value={index}>
+                    <option
+                      key={`${item.model}-${item.color}-${index}`}
+                      value={index}
+                    >
                       {item.color} {item.model} - {item.description}
                     </option>
                   ))}
@@ -585,7 +602,10 @@ export default function StockDoorPricingPage() {
               <>
                 <div className="mt-5 grid gap-5 md:grid-cols-2">
                   <Field label="Panel / Glass">
-                    <Select value={finish} onChange={(value) => setFinish(value as typeof finish)}>
+                    <Select
+                      value={finish}
+                      onChange={(value) => setFinish(value as typeof finish)}
+                    >
                       {finishOptions.map((option) => (
                         <option key={option.value} value={option.value}>
                           {option.label}
@@ -598,7 +618,10 @@ export default function StockDoorPricingPage() {
                     <Select value={track} onChange={setTrack}>
                       {door.tracks.map((item) => (
                         <option key={item} value={item}>
-                          {item} {trackAddOns[item] ? `+${formatCurrency(trackAddOns[item])}` : ""}
+                          {item}{" "}
+                          {trackAddOns[item]
+                            ? `+${formatCurrency(trackAddOns[item])}`
+                            : ""}
                         </option>
                       ))}
                     </Select>
