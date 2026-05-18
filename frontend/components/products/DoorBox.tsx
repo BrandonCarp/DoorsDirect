@@ -1,41 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Door, getDoorLink } from "@/lib/doors";
 
-interface Door {
-  id: number;
-  title: string;
-  shortDesc: string;
-  cover: string;
-  gallery: string;
-  brochure: string;
-  link: string;
-}
+export default function DoorBox({
+  basePath,
+  doors,
+}: {
+  basePath: string;
+  doors: Door;
+}) {
+  const doorLink = getDoorLink(doors, basePath);
 
-export default function DoorBox({ doors }: { doors: Door }) {
   return (
-    <div className="w-full my-5 md:my-10 px-5">
-      <div className="relative w-full aspect-[5/3]">
+    <article className="group flex h-full w-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+      <Link
+        href={doorLink}
+        className="relative block aspect-[4/3] w-full border-b border-gray-100 bg-cream-secondary"
+      >
         <Image
           src={doors.cover}
           fill
-          sizes="(max-width: 768px) 100vw, 90vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           alt={doors.title}
-          className="object-cover"
+          className="object-contain p-4 transition duration-500 group-hover:scale-[1.03]"
         />
-      </div>
+        <span className="absolute left-4 top-4 rounded bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-red-main">
+          Clopay
+        </span>
+      </Link>
 
-      <div className="mt-4">
-        <p className="font-semibold text-red-main text-lg lg:text-3xl">
+      <div className="flex flex-1 flex-col p-5">
+        <h2 className="text-xl font-semibold leading-snug text-gray-bg">
           {doors.title}
+        </h2>
+        <p className="mt-3 mb-5 text-sm leading-6 text-gray-700">
+          {doors.shortDesc}
         </p>
-        <p className="text-red-main md:text-lg">{doors.shortDesc}</p>
         <Link
-          href={doors.link}
-          className="inline-flex justify-center rounded mt-2 bg-red-main text-white px-4 py-3 text-sm hover:bg-red-secondary w-[150px] font-semibold"
+          href={doorLink}
+          className="mt-auto inline-flex w-fit items-center justify-center rounded-md bg-red-main px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-secondary"
         >
-          Learn More
+          View Specs
         </Link>
       </div>
-    </div>
+    </article>
   );
 }

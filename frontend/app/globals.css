@@ -9,6 +9,16 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+@keyframes brand-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
 @theme {
   --color-gray-bg: #0f0f0fff;
   --color-gray-secondary: ;

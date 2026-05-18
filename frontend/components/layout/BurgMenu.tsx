@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface BurgMenuProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;

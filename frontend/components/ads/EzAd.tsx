@@ -5,36 +5,39 @@ import ezdoorphone from "@/public/images/ezdoorphone.png";
 
 export default function EzAd() {
   return (
-    <div className="w-full flex flex-col items-center text-center px-5 py-10">
-      <p className="font-semibold text-red-main text-xl md:text-2xl lg:text-3xl">
-        Bring Your Door To Life With
-      </p>
-      <h2 className="font-semibold text-red-main text-2xl md:text-3xl lg:text-4xl">
-        EZDoor™
-      </h2>
-      <p className="text-red-main my-3 md:text-lg lg:text-xl w-[90%] md:w-[70%] lg:w-[50%]">
-        Clopay's EZDoor™ Visualizer makes choosing the perfect garage door easy.
-        Upload a photo of your home and instantly see your upgrade and feel
-        confident in your choice before making a decision.
-      </p>
-      <Link
-        href="/ezdoor"
-        className="flex items-center gap-2 justify-center rounded bg-red-main text-white px-4 py-3 text-sm hover:bg-red-secondary w-[150px]"
-      >
-        <SwatchIcon className="w-6 h-6" />
-        <span className="font-semibold">Try EZDoor™</span>
-      </Link>
+    <section className="w-full bg-cream-secondary px-4 py-10 md:px-8 lg:px-10 lg:py-14">
+      <div className="mx-auto grid max-w-7xl gap-8 rounded-lg bg-white p-5 shadow-sm md:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+        <div className="relative mx-auto aspect-[4/3] w-full max-w-sm rounded-lg bg-white">
+          <Image
+            src={ezdoorphone}
+            fill
+            sizes="(max-width: 1024px) 100vw, 35vw"
+            alt="Clopay EZDoor visualizer on a phone"
+            className="object-contain p-4"
+          />
+        </div>
 
-      {/* Hidden at md and above */}
-      {/* <div className="relative w-[90%] aspect-[4/3] mt-8 md:hidden">
-        <Image
-          src={ezdoorphone}
-          fill
-          sizes="90vw"
-          alt="Clopay Ez Door Promotional Image Couple"
-          className="object-contain"
-        />
-      </div> */}
-    </div>
+        <div>
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-red-main">
+            Door Visualizer
+          </p>
+          <h2 className="mt-2 text-3xl font-bold leading-tight text-gray-bg md:text-4xl">
+            See the door on your home before you choose.
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-gray-700 md:text-lg">
+            Clopay EZDoor makes choosing the right garage door easier. Upload a
+            photo of your home, preview styles, and feel confident before
+            requesting pricing.
+          </p>
+          <Link
+            href="/ezdoor"
+            className="mt-6 inline-flex items-center gap-2 rounded-md bg-red-main px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-secondary"
+          >
+            <SwatchIcon className="h-5 w-5" />
+            Try EZDoor
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }

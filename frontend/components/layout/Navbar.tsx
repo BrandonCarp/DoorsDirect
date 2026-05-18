@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/logo/logo1.png";
-import { PhoneIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import { PhoneIcon } from "@heroicons/react/24/solid";
 import BurgMenu from "@/components/layout/BurgMenu";
 import ezimg from "@/public/images/ezmobilead.png";
 import NavItem from "./NavItem";
@@ -49,12 +49,10 @@ const navItems = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isResiMenu, setIsResiMenu] = useState(false);
-  const [isCommMenu, setIsCommMenu] = useState(false);
 
   return (
-    <nav className="bg-white sticky w-[100vw] z-20 top-0 ">
-      <div className="w-full flex items-center justify-between mx-auto  py-5 px-10 border border-gray-200">
+    <nav className="sticky top-0 z-20 w-full bg-white border-b border-gray-200">
+      <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between px-6 py-5 md:px-10 lg:px-14">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
@@ -80,64 +78,20 @@ export default function Navbar() {
         </div>
         <div className="flex gap-5">
           <Link
-            href="/contact-us"
-            className="hidden lg:flex items-center whitespace-nowrap text-white bg-red-main px-3 py-1 rounded  hover:bg-red-secondary lg:text-2xl"
+            href="/request-quote"
+            className="hidden items-center justify-center rounded-md bg-red-main px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-secondary focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2 lg:inline-flex"
           >
             Request a Quote
           </Link>
           <Link
-            href="/contact-us"
-            className="hidden lg:flex items-center whitespace-nowrap text-white bg-red-main px-3 py-1 rounded  hover:bg-red-secondary lg:text-2xl"
+            href="tel:8566626666"
+            className="hidden items-center justify-center gap-2 rounded-md border border-red-main bg-white px-5 py-3 text-sm font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2 lg:inline-flex"
           >
-            <PhoneIcon className="h-6 w-6 mr-2" /> Call Now
+            <PhoneIcon className="h-5 w-5" /> Call Now
           </Link>
         </div>
         <BurgMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
       </div>
-      {/* DROP DOWN MENUS */}
-
-      {/* Residential Drop Down */}
-      <div
-        className={`  overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-between ${
-          isResiMenu ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <ul className="flex flex-col gap-4 p-4 bg-white ">
-          <li className="border-b border-gray-300">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-xl "
-            >
-              Residential Doors
-            </button>
-          </li>
-          <li className="border-b border-gray-300">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
-            >
-              Commercial Doors
-            </button>
-          </li>
-          <li className="border-b border-gray-300">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
-            >
-              Operators
-            </button>
-          </li>
-          <li className="border-b border-gray-300">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center whitespace-nowrap text-red-main lg:text-lg "
-            >
-              Order Online
-            </button>
-          </li>
-        </ul>
-      </div>
-
       {/* Mobile menu dropdown */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-between ${
