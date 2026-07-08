@@ -5,11 +5,19 @@ import { Door, getDoorLink } from "@/lib/doors";
 export default function DoorBox({
   basePath,
   doors,
+  href,
+  badge = "Clopay",
 }: {
   basePath: string;
   doors: Door;
+  // Optional precomputed link (e.g. brand-aware residential URLs). Falls back
+  // to the basePath + slug behavior used by the commercial catalog.
+  href?: string;
+  // Brand label shown on the image corner. Defaults to Clopay for backward
+  // compatibility with the existing commercial catalog.
+  badge?: string;
 }) {
-  const doorLink = getDoorLink(doors, basePath);
+  const doorLink = href ?? getDoorLink(doors, basePath);
 
   return (
     <article className="group flex h-full w-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -25,7 +33,7 @@ export default function DoorBox({
           className="object-contain p-4 transition duration-500 group-hover:scale-[1.03]"
         />
         <span className="absolute left-4 top-4 rounded bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-red-main">
-          Clopay
+          {badge}
         </span>
       </Link>
 

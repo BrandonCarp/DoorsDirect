@@ -8,19 +8,19 @@ import BurgMenu from "@/components/layout/BurgMenu";
 import ezimg from "@/public/images/ezmobilead.png";
 import NavItem from "./NavItem";
 
-// NOTE: Brand-specific pages (CHI, Haas, Amarr, Overhead) and dedicated
-// springs pages don't exist yet. Until they're built, these links point to
-// the closest existing catalog/quote page so nothing 404s. Repoint them once
-// the dedicated pages are created.
+// NOTE: Residential brand pages (Clopay/CHI/Haas/Amarr) exist under
+// /residential-garage-doors/<brand>. Commercial brand pages and dedicated
+// springs pages don't exist yet, so those links point to the closest existing
+// catalog/quote page so nothing 404s. Repoint them once those pages are built.
 const navItems = [
   {
     label: "Residential",
     links: [
       { label: "All Residential Doors", href: "/residential-garage-doors" },
-      { label: "Clopay", href: "/residential-garage-doors" },
-      { label: "CHI", href: "/residential-garage-doors" },
-      { label: "Haas", href: "/residential-garage-doors" },
-      { label: "Amarr", href: "/residential-garage-doors" },
+      { label: "Clopay", href: "/residential-garage-doors/clopay" },
+      { label: "CHI", href: "/residential-garage-doors/chi" },
+      { label: "Haas", href: "/residential-garage-doors/haas" },
+      { label: "Amarr", href: "/residential-garage-doors/amarr" },
     ],
   },
   {

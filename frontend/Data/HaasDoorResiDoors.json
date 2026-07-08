@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "American Tradition Series",
+    "shortDesc": "Haas's flagship carriage house line — thick, fully thermally broken sections with a handcrafted look.",
+    "description": "The American Tradition Series is Haas Door's signature carriage house collection, blending old-world craftsmanship with modern performance. Sections are a substantial 2-5/8\" or 2\" thick with a full thermal break and polyurethane insulation for year-round comfort.\n\nBuilt from galvanized steel or aluminum, the series offers a wide range of panel designs, window options, and colors so you can dial in exactly the carriage look you want — from rustic to refined.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/62ac4e4a-6758-4979-bd93-8f2c2300fc60-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/residential/AmericanTradition/index.html"
+  },
+  {
+    "id": 2,
+    "title": "Insulated Steel 700 Series",
+    "shortDesc": "A best-selling insulated steel door — 1-3/4\" thick with a full thermal break and a 0.093 U-factor.",
+    "description": "The 700 Series is one of Haas Door's most popular residential doors, offering a strong balance of insulation, durability, and value. Sections are 1-3/4\" thick with a full thermal break and a tested 0.093 U-factor for solid energy performance.\n\nWith extensive color and panel choices, the 700 Series adapts to traditional and contemporary homes alike while keeping upkeep low and operation quiet.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/764%20TrinarBeige%20IMG_5915-1920x1285-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/residential/700/index.html"
+  },
+  {
+    "id": 3,
+    "title": "Insulated Steel 600 Series",
+    "shortDesc": "A value-focused insulated steel door — 1-3/8\" thick with a full thermal break and a 0.106 U-factor.",
+    "description": "The 600 Series delivers dependable insulated-steel performance at an approachable price. Sections are 1-3/8\" thick with a full thermal break and a 0.106 U-factor, making it a smart choice for homeowners who want comfort and durability without stepping up to the thickest options.\n\nIt shares the same broad selection of colors and panel styles as the 700 Series, so you don't sacrifice curb appeal to stay on budget.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/660%20AmericanWalnut%20IMG_6139-1920x1285-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/residential/600/index.html"
+  },
+  {
+    "id": 4,
+    "title": "Insulated Steel 2000 Series",
+    "shortDesc": "Haas's premium 2\" steel door — full thermal break, 0.094 U-factor, 26 colors and 9 panel options.",
+    "description": "The 2000 Series is Haas Door's premium insulated-steel offering, built on 2\"-thick galvanized steel with a full thermal break and a strong 0.094 U-factor. It's engineered for maximum durability and energy efficiency.\n\nWith 26 color options and 9 panel designs, the 2000 Series gives you the widest range of customization in the Haas steel lineup — ideal for homeowners who want top-tier performance and a tailored look.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/2064%20Mahogany%20IMG_5832-1920x1285-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/residential/2000/index.html"
+  },
+  {
+    "id": 5,
+    "title": "Aluminum 5000 Series",
+    "shortDesc": "Corrosion-resistant insulated aluminum — 2\" or 1-3/4\" thick with a full thermal break.",
+    "description": "The 5000 Series pairs the clean look of aluminum with real thermal performance. Sections are 2\" or 1-3/4\" thick with a full thermal break and polyurethane insulation, and the aluminum construction resists rust and corrosion — a great fit for coastal and humid environments.\n\nMultiple panel and window configurations let you create anything from a classic to a contemporary aluminum door.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/5710%20TrinarWhite%20IMG_6377-1920x1285-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/residential/5000/index.html"
+  },
+  {
+    "id": 6,
+    "title": "2500 Series",
+    "shortDesc": "Non-insulated 2\" galvanized steel with tongue-and-groove design and optional polystyrene insert.",
+    "description": "The 2500 Series is a durable, budget-friendly galvanized steel door with a 2\"-thick tongue-and-groove design. It's a practical choice for garages, outbuildings, and homes where insulation is optional.\n\nAdd a polystyrene insert for a tested 0.231 U-factor when you want extra thermal performance, and choose from a range of colors to match your home.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/2560%20Sandstone%20IMG_8109-1920x1285-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/residential/2500/index.html"
+  }
+]

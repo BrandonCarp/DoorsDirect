@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Classica",
+    "shortDesc": "Amarr's flagship carriage collection — over 100 authentic-looking carriage house designs stamped in steel.",
+    "description": "Classica is Amarr's signature carriage house collection and one of its most popular residential doors. With over 100 authentic-looking carriage house designs stamped directly into steel, you get the handcrafted look of a swing-open carriage door with the convenience of a modern sectional.\n\nInsulated steel construction keeps the garage comfortable and quiet, while a wide range of panel designs, window styles, and two-tone color combinations makes it easy to match your home's character.",
+    "cover": "https://www.amarr.com/content/dam/amarr/com/us/en/products/residential/doors/collections/classica/door-images/santiago/madeira/santiago-madeira-two-tone-true-white-gray.jpg",
+    "gallery": "https://www.amarr.com/us/en/garage-doors/explore-products/view-all-doors/classica"
+  },
+  {
+    "id": 2,
+    "title": "Hillcrest",
+    "shortDesc": "Steel carriage house designs at a great value.",
+    "description": "Hillcrest brings carriage house style within reach, offering steel carriage designs at a great value. It's a smart pick for homeowners who want the charm of a carriage door without the premium price.\n\nAvailable in a variety of recessed and raised panel designs with multiple color and window options, Hillcrest pairs curb appeal with durable, low-maintenance steel.",
+    "cover": "https://www.amarr.com/content/dam/amarr/com/us/en/products/residential/doors/collections/hillcrest/door-images/recessed/victorian-lp/recessed-victorian-lp-charcoal-gray.jpg",
+    "gallery": "https://www.amarr.com/us/en/garage-doors/explore-products/view-all-doors/hillcrest"
+  },
+  {
+    "id": 3,
+    "title": "Lincoln",
+    "shortDesc": "No better value in a classic, low-maintenance steel garage door.",
+    "description": "The Lincoln collection is Amarr's classic traditional steel door and one of the best values in the lineup. Clean short- and long-panel designs suit almost any home, and the low-maintenance steel construction keeps things simple for years.\n\nChoose from a range of colors and window options to personalize the look while keeping costs down — a dependable everyday door.",
+    "cover": "https://www.amarr.com/content/dam/amarr/com/us/en/products/residential/doors/collections/lincoln/door-images/short-panel/heartland-sp/short-panel-heartland-sp-true-white.jpg",
+    "gallery": "https://www.amarr.com/us/en/garage-doors/explore-products/view-all-doors/lincoln"
+  },
+  {
+    "id": 4,
+    "title": "Olympus",
+    "shortDesc": "High R-value and lasting style with superior energy efficiency.",
+    "description": "Olympus is built for energy efficiency, delivering a high R-value and lasting style for homeowners who want to keep the garage — and the rooms above and beside it — more comfortable year-round.\n\nWith traditional long- and short-panel designs, a variety of colors, and window options, Olympus combines strong thermal performance with the clean, timeless look homeowners expect.",
+    "cover": "https://www.amarr.com/content/dam/amarr/com/us/en/products/residential/doors/collections/olympus/door-images/long-panel/clear-lp/long-panel-clear-lp-black.jpg",
+    "gallery": "https://www.amarr.com/us/en/garage-doors/explore-products/view-all-doors/olympus"
+  },
+  {
+    "id": 5,
+    "title": "Heritage",
+    "shortDesc": "Enduring style in heavy-duty, low-maintenance steel.",
+    "description": "The Heritage collection offers enduring, traditional style in heavy-duty, low-maintenance steel. It's a straightforward, durable door that holds up to daily use and the elements.\n\nWith flush and raised panel designs plus a selection of colors and window options, Heritage is an easy, cost-effective way to refresh your home's curb appeal.",
+    "cover": "https://www.amarr.com/content/dam/amarr/com/us/en/products/residential/doors/collections/heritage/door-images/flush-panel/clear-lp/flush-panel-clear-lp-dark-brown.jpg",
+    "gallery": "https://www.amarr.com/us/en/garage-doors/explore-products/view-all-doors/heritage"
+  },
+  {
+    "id": 6,
+    "title": "Vista",
+    "shortDesc": "Clean, simple lines and a full-view design in a contemporary aluminum-and-glass door.",
+    "description": "Vista is Amarr's contemporary full-view door, built around clean, simple lines and expansive glass. Aluminum rails and full-view glass flood the garage with light and give modern homes a sleek, architectural edge.\n\nMultiple glass options and anodized or painted finishes let you tailor the look, making Vista a standout for contemporary builds and indoor-outdoor spaces.",
+    "cover": "https://www.amarr.com/content/dam/amarr/com/us/en/products/residential/doors/collections/vista/door-images/full-view/clear/full-view-clear-copper-anodize.jpg",
+    "gallery": "https://www.amarr.com/us/en/garage-doors/explore-products/view-all-doors/vista"
+  }
+]

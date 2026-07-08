@@ -5,7 +5,7 @@ export interface Door {
   description: string | string[];
   cover: string;
   gallery: string;
-  brochure: string;
+  brochure?: string;
   link?: string;
 }
 

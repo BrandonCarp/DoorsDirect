@@ -13,6 +13,7 @@ interface DoorDetailProps {
   backLabel: string;
   category: "Residential" | "Commercial";
   door: Door;
+  brandName?: string;
 }
 
 export default function DoorDetail({
@@ -20,6 +21,7 @@ export default function DoorDetail({
   backLabel,
   category,
   door,
+  brandName = "Clopay",
 }: DoorDetailProps) {
   const paragraphs = getDoorDescription(door.description);
 
@@ -48,7 +50,7 @@ export default function DoorDetail({
 
         <div className="flex flex-col justify-center">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-main">
-            Clopay {category}
+            {brandName} {category}
           </p>
           <h1 className="mt-3 text-3xl font-bold leading-tight text-gray-bg md:text-5xl">
             {door.title}
@@ -83,7 +85,7 @@ export default function DoorDetail({
               <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">
                 Brand
               </dt>
-              <dd className="mt-2 font-semibold text-gray-bg">Clopay</dd>
+              <dd className="mt-2 font-semibold text-gray-bg">{brandName}</dd>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-4">
               <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">
@@ -115,14 +117,16 @@ export default function DoorDetail({
               Specs & Resources
             </h2>
             <div className="mt-5 grid gap-3">
-              <Link
-                href={door.brochure}
-                target="_blank"
-                className="inline-flex items-center gap-3 rounded-md bg-white px-4 py-3 text-sm font-semibold text-gray-bg transition-colors hover:text-red-main"
-              >
-                <ArrowDownTrayIcon className="h-5 w-5 text-red-main" />
-                Product Brochure
-              </Link>
+              {door.brochure ? (
+                <Link
+                  href={door.brochure}
+                  target="_blank"
+                  className="inline-flex items-center gap-3 rounded-md bg-white px-4 py-3 text-sm font-semibold text-gray-bg transition-colors hover:text-red-main"
+                >
+                  <ArrowDownTrayIcon className="h-5 w-5 text-red-main" />
+                  Product Brochure
+                </Link>
+              ) : null}
               <Link
                 href={door.gallery}
                 target="_blank"
