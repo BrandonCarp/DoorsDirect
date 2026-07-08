@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "American Tradition 9000 Series",
+    "shortDesc": "Premium insulated steel commercial doors with polyurethane insulation and tested U-factors as low as 0.081.",
+    "description": "The American Tradition 9000 Series is Haas Door's premium commercial steel line, pairing a handcrafted carriage-house look with serious commercial performance. Polyurethane insulation in 2-5/8\" or 2\" thicknesses delivers tested U-factors from 0.081 to 0.110.\n\nWith 42 available models and extensive customization, it's a standout choice for upscale commercial buildings that want curb appeal without giving up durability or efficiency.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/9622+Sandstone_2G1A6297-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/commercial/AmericanTradition/index.html"
+  },
+  {
+    "id": 2,
+    "title": "Insulated Steel 800 Series",
+    "shortDesc": "3\" thick insulated steel with a 0.089 U-factor, thermal break, and wind-load capability.",
+    "description": "The 800 Series is Haas Door's heavy-duty commercial steel door, built on 3\"-thick sections with a tested 0.089 U-factor for strong thermal performance. It includes an air-infiltration seal and full thermal break.\n\nConstructed from 26-gauge galvanized steel with wind-load capability and 19 color options, the 800 Series suits warehouses, distribution centers, and other demanding commercial applications.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/816%20TrinarWhite%20IMG_3969-1920x1285-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/commercial/800/index.html"
+  },
+  {
+    "id": 3,
+    "title": "Insulated Steel 2000 Series",
+    "shortDesc": "2\" thick insulated steel with a 0.094 U-factor, full thermal break, and 26 color options.",
+    "description": "The commercial 2000 Series offers a strong balance of insulation and value on 2\"-thick galvanized steel sections with a tested 0.094 U-factor, air-infiltration seal, and full thermal break.\n\nWith 26 color selections and wind-load options, it's a versatile everyday commercial door for a wide range of business and light-industrial buildings.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/2016%20Bronze%20IMG_3855-1920x1285-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/commercial/2000/index.html"
+  },
+  {
+    "id": 4,
+    "title": "Insulated Steel 700 Series",
+    "shortDesc": "1-3/4\" thick insulated steel with a 0.093 U-factor and full thermal break — a commercial value leader.",
+    "description": "The commercial 700 Series brings dependable insulated-steel performance at an approachable price. Sections are 1-3/4\" thick with a tested 0.093 U-factor and full thermal break.\n\nAvailable in 26 colors with wind-load capability, the 700 Series is a smart choice for commercial buildings that want comfort and durability without stepping up to the thickest sections.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/716+Charcoal_2G1A6111-Edit-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/commercial/700/index.html"
+  },
+  {
+    "id": 5,
+    "title": "Commercial Aluminum Series",
+    "shortDesc": "Corrosion-resistant aluminum full-view doors (CA-320, CA-315, CA-110) with painted, anodized, and powder-coat finishes.",
+    "description": "Haas Door's Commercial Aluminum Series delivers bright, modern storefront looks in corrosion-resistant aluminum. The CA-320, CA-315, and CA-110 models offer diverse glass options plus solid-panel availability.\n\nFinished in painted, anodized, or powder-coated options, these doors are ideal for restaurants, dealerships, and retail spaces that want a clean, contemporary aluminum-and-glass storefront.",
+    "cover": "https://lirp.cdn-website.com/49fbf1c0/dms3rep/multi/opt/CA220%20PaintedBronze%20IMG_3964_wdCnsMISRdcrXgYOrx9M-1920x1285-1920w.jpg",
+    "gallery": "https://www.haasdoor.com/commercial/ca/index.html"
+  }
+]

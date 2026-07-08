@@ -24,6 +24,9 @@ export default function DoorDetail({
   brandName = "Clopay",
 }: DoorDetailProps) {
   const paragraphs = getDoorDescription(door.description);
+  const quoteHref = `/request-quote?model=${encodeURIComponent(
+    door.title,
+  )}&brand=${encodeURIComponent(brandName)}&category=${category}`;
 
   return (
     <main className="bg-cream-bg pt-24">
@@ -61,7 +64,7 @@ export default function DoorDetail({
 
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
             <Link
-              href="/request-quote"
+              href={quoteHref}
               className="inline-flex items-center justify-center rounded-md bg-red-main px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-secondary"
             >
               Request Estimate
@@ -136,7 +139,7 @@ export default function DoorDetail({
                 Image Gallery
               </Link>
               <Link
-                href="/request-quote"
+                href={quoteHref}
                 className="inline-flex items-center gap-3 rounded-md bg-white px-4 py-3 text-sm font-semibold text-gray-bg transition-colors hover:text-red-main"
               >
                 <WrenchScrewdriverIcon className="h-5 w-5 text-red-main" />

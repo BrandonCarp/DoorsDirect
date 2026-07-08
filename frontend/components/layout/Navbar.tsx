@@ -8,10 +8,9 @@ import BurgMenu from "@/components/layout/BurgMenu";
 import ezimg from "@/public/images/ezmobilead.png";
 import NavItem from "./NavItem";
 
-// NOTE: Residential brand pages (Clopay/CHI/Haas/Amarr) exist under
-// /residential-garage-doors/<brand>. Commercial brand pages and dedicated
-// springs pages don't exist yet, so those links point to the closest existing
-// catalog/quote page so nothing 404s. Repoint them once those pages are built.
+// Residential and commercial brand pages live under
+// /<category>-garage-doors/<brand>. Operators link to the LiftMaster page and
+// its accessories sub-page; springs link to the spring-request form.
 const navItems = [
   {
     label: "Residential",
@@ -27,26 +26,25 @@ const navItems = [
     label: "Commercial",
     links: [
       { label: "All Commercial Doors", href: "/commercial-garage-doors" },
-      { label: "Clopay", href: "/commercial-garage-doors" },
-      { label: "CHI", href: "/commercial-garage-doors" },
-      { label: "Haas", href: "/commercial-garage-doors" },
-      { label: "Amarr", href: "/commercial-garage-doors" },
-      { label: "Overhead", href: "/commercial-garage-doors" },
+      { label: "Clopay", href: "/commercial-garage-doors/clopay" },
+      { label: "CHI", href: "/commercial-garage-doors/chi" },
+      { label: "Haas", href: "/commercial-garage-doors/haas" },
+      { label: "Amarr", href: "/commercial-garage-doors/amarr" },
     ],
   },
   {
     label: "Operators",
     links: [
       { label: "All LiftMaster Products", href: "/liftmaster-products" },
-      { label: "Operators", href: "/liftmaster-products" },
-      { label: "Accessories", href: "/liftmaster-products" },
+      { label: "Openers & Operators", href: "/liftmaster-products" },
+      { label: "Remotes & Accessories", href: "/liftmaster-products/accessories" },
     ],
   },
   {
     label: "Springs",
     links: [
-      { label: "Torsion Springs", href: "/request-quote" },
-      { label: "Extension Springs", href: "/request-quote" },
+      { label: "Torsion Springs", href: "/spring-request" },
+      { label: "Extension Springs", href: "/spring-request" },
     ],
   },
 ];

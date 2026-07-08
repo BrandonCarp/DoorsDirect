@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "lirp.cdn-website.com" },
       { protocol: "https", hostname: "www.amarr.com" },
       { protocol: "https", hostname: "gw-assets.assaabloy.com" },
+      // LiftMaster operator & accessory imagery
+      { protocol: "https", hostname: "embed.widencdn.net" },
+      { protocol: "https", hostname: "www.liftmaster.com" },
+      { protocol: "https", hostname: "allsecurityequipment.com" },
     ],
   },
 };
