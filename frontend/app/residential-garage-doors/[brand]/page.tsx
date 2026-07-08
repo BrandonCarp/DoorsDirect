@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import DoorBox from "@/components/products/DoorBox";
 import {
   getResidentialBrand,
@@ -42,9 +43,10 @@ export default async function BrandResidentialPage({ params }: BrandPageProps) {
       <section className="mx-auto max-w-7xl">
         <Link
           href="/residential-garage-doors"
-          className="text-sm font-semibold text-red-main hover:text-red-secondary"
+          className="inline-flex items-center gap-2 text-base font-bold text-red-main transition-colors hover:text-red-secondary md:text-lg"
         >
-          ← All residential doors
+          <ArrowLeftIcon className="h-5 w-5" />
+          All residential doors
         </Link>
         <p className="mt-4 text-sm font-bold uppercase tracking-[0.2em] text-red-main">
           Residential Catalog

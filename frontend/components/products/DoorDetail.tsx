@@ -34,9 +34,9 @@ export default function DoorDetail({
         <div>
           <Link
             href={backHref}
-            className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-red-main hover:text-red-secondary"
+            className="mb-5 inline-flex items-center gap-2 text-base font-bold text-red-main transition-colors hover:text-red-secondary md:text-lg"
           >
-            <ArrowLeftIcon className="h-4 w-4" />
+            <ArrowLeftIcon className="h-5 w-5" />
             {backLabel}
           </Link>
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">

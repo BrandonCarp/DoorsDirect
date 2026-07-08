@@ -7,42 +7,63 @@ import { CheckCircleIcon, PhoneIcon } from "@heroicons/react/24/outline";
 const inputClass =
   "rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-bg outline-none transition focus:border-red-main focus:ring-2 focus:ring-red-main/20";
 
-// Common spring specs offered as dropdowns (no pricing).
+// Spring specs offered as dropdowns (no pricing).
+// Wire sizes follow the full Service Spring (SSC) spring wire chart.
 const wireSizes = [
-  ".187",
+  ".125",
+  ".135",
+  ".142",
+  ".1483",
+  ".1562",
+  ".162",
+  ".170",
+  ".177",
+  ".1875",
   ".192",
   ".207",
-  ".218",
-  ".225",
-  ".234",
-  ".243",
+  ".2187",
+  ".2253",
+  ".2343",
+  ".2437",
   ".250",
-  ".262",
+  ".2625",
   ".273",
   ".283",
+  ".289",
   ".295",
-  ".307",
+  ".3065",
+  ".3125",
+  ".3195",
+  ".331",
+  ".3437",
+  ".3625",
+  ".375",
+  ".3938",
+  ".4062",
+  ".4218",
+  ".4305",
+  ".4375",
+  ".4615",
+  ".4687",
+  ".490",
+  ".500",
+  ".5312",
+  ".5625",
+  ".625",
 ];
-const insideDiameters = ['1 3/4"', '2"', '2 1/4"', '2 5/8"'];
+// Standard torsion spring inside diameters (residential through commercial).
+const insideDiameters = ['1 3/4"', '2"', '2 1/4"', '2 5/8"', '3 3/4"', '6"'];
 const windDirections = [
   "Right wound (RW)",
   "Left wound (LW)",
   "Pair — one of each",
   "Not sure",
 ];
-const extensionWeights = [
-  "100 lb",
-  "110 lb",
-  "120 lb",
-  "130 lb",
-  "140 lb",
-  "150 lb",
-  "160 lb",
-  "170 lb",
-  "180 lb",
-  "190 lb",
-  "200 lb",
-];
+// Extension spring weight ratings from 50 lb through 440 lb in 10 lb steps.
+const extensionWeights = Array.from(
+  { length: 40 },
+  (_, i) => `${50 + i * 10} lb`,
+);
 const doorWidths = [
   "8'",
   "9'",

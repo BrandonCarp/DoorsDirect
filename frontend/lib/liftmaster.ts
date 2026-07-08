@@ -162,16 +162,18 @@ export const accessories: Accessory[] = [
     name: "Wireless Keypad",
     category: "Keypads",
     desc: "Keyless entry keypad for color learn-button openers — open and close the door with a personal PIN, no remote needed.",
-    image: "https://www.liftmaster.com/medias/delorean-P7-LM.png",
-    url: "https://www.liftmaster.com/remotes-and-keypads",
+    image:
+      "https://embed.widencdn.net/img/cgi/et8p5gll6j/420px/L979MKeypad1_LM_1.png",
+    url: "https://www.liftmaster.com/liftmaster-keypad/p/L979M",
   },
   {
     model: "L979U",
     name: "Universal Wireless Keypad",
     category: "Keypads",
     desc: "Universal keyless entry keypad that works with LiftMaster and other major garage door opener brands.",
-    image: "https://www.liftmaster.com/medias/delorean-P8-LM.png",
-    url: "https://www.liftmaster.com/remotes-and-keypads",
+    image:
+      "https://embed.widencdn.net/img/cgi/ymc8zaddj9/420px/Accessories-CG1.3327_L979U_LM_1.png",
+    url: "https://www.liftmaster.com/liftmaster-keypad-universal/p/L979U",
   },
   // Control Panels
   {

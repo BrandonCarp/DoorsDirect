@@ -86,12 +86,6 @@ export default function Navbar() {
             Request a Quote
           </Link>
           <Link
-            href="/stock-door-pricing"
-            className="hidden items-center justify-center rounded-md border border-red-main bg-white px-5 py-3 text-sm font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2 lg:inline-flex"
-          >
-            Price Stock
-          </Link>
-          <Link
             href="tel:8566626666"
             className="hidden items-center justify-center gap-2 rounded-md border border-red-main bg-white px-5 py-3 text-sm font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2 lg:inline-flex"
           >
@@ -137,11 +131,11 @@ export default function Navbar() {
           </li>
           <li className="border-b border-gray-300">
             <Link
-              href="/stock-door-pricing"
+              href="/request-quote"
               className="block text-red-main hover:text-red-main py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Price Stock
+              Request a Quote
             </Link>
           </li>
         </ul>

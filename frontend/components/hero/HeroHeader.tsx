@@ -4,6 +4,8 @@ import {
   ArrowRightIcon,
   BuildingStorefrontIcon,
   ClipboardDocumentCheckIcon,
+  MapPinIcon,
+  PhoneIcon,
   TruckIcon,
 } from "@heroicons/react/24/outline";
 
@@ -35,44 +37,60 @@ export default function HeroHeader() {
     <section className="bg-white">
       <div className="relative overflow-hidden bg-cream-secondary px-4 pt-24 pb-12 md:px-8 md:pt-28 lg:px-10 lg:pb-16">
         <div className="absolute inset-x-0 bottom-0 h-px bg-gray-200" />
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <p className="text-xl font-bold uppercase tracking-[0.18em] text-red-main md:text-2xl">
-              Wholesale Door Supply
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-red-main md:text-base">
+              Wholesale Door Supply · Pennsauken &amp; Union, NJ
             </p>
 
-            <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-tight text-gray-bg md:text-6xl">
-              Garage doors, parts, and quotes without the runaround.
+            <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-[1.08] text-gray-bg md:text-6xl">
+              Garage doors, openers &amp; parts —{" "}
+              <span className="text-red-main">in stock</span> and ready to go.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-gray-700 md:text-lg">
-              Browse residential and commercial collections, compare product
-              resources, and get help from a team that keeps jobs moving.
+              Residential and commercial doors from Clopay, C.H.I., Haas, and
+              Amarr, plus LiftMaster openers, springs, and everyday parts —
+              backed by a team that keeps jobs moving.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/request-quote"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-red-main px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-red-secondary focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2"
               >
-                Receive an Estimate
+                Request a Quote
                 <ArrowRightIcon className="h-5 w-5" />
               </Link>
               <Link
                 href="/residential-garage-doors"
                 className="inline-flex items-center justify-center rounded-md border border-red-main bg-white px-6 py-3 text-base font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2"
               >
-                Shop Doors
+                Residential Doors
+              </Link>
+              <Link
+                href="/commercial-garage-doors"
+                className="inline-flex items-center justify-center rounded-md border border-red-main bg-white px-6 py-3 text-base font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2"
+              >
+                Commercial Doors
               </Link>
             </div>
+
+            <a
+              href="tel:8566626666"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gray-700 transition-colors hover:text-red-main"
+            >
+              <PhoneIcon className="h-4 w-4 text-red-main" />
+              Prefer to talk? Call (856) 662-6666
+            </a>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+          <div className="grid gap-3 sm:grid-cols-2">
             <div className="flex gap-4 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <ClipboardDocumentCheckIcon className="h-7 w-7 shrink-0 text-red-main" />
+              <BuildingStorefrontIcon className="h-7 w-7 shrink-0 text-red-main" />
               <div>
-                <p className="font-bold text-gray-bg">Clear Specs</p>
+                <p className="font-bold text-gray-bg">In Stock &amp; Local</p>
                 <p className="mt-1 text-sm leading-6 text-gray-600">
-                  Brochures and galleries ready to review.
+                  Doors, springs, and parts on the shelf, ready for pickup.
                 </p>
               </div>
             </div>
@@ -81,16 +99,25 @@ export default function HeroHeader() {
               <div>
                 <p className="font-bold text-gray-bg">Fast Supply</p>
                 <p className="mt-1 text-sm leading-6 text-gray-600">
-                  Built for installers and active jobs.
+                  Built for installers, dealers, and active jobs.
                 </p>
               </div>
             </div>
             <div className="flex gap-4 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <BuildingStorefrontIcon className="h-7 w-7 shrink-0 text-red-main" />
+              <ClipboardDocumentCheckIcon className="h-7 w-7 shrink-0 text-red-main" />
               <div>
-                <p className="font-bold text-gray-bg">Trade Support</p>
+                <p className="font-bold text-gray-bg">Clear Specs</p>
                 <p className="mt-1 text-sm leading-6 text-gray-600">
-                  Residential and commercial help.
+                  Brochures, galleries, and honest answers up front.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+              <MapPinIcon className="h-7 w-7 shrink-0 text-red-main" />
+              <div>
+                <p className="font-bold text-gray-bg">Two NJ Locations</p>
+                <p className="mt-1 text-sm leading-6 text-gray-600">
+                  Doors Direct South &amp; Doors Direct Union.
                 </p>
               </div>
             </div>

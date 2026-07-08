@@ -259,15 +259,23 @@ function RequestQuoteForm() {
       </div>
 
       {/* In-stock selector */}
-      <div className="rounded-lg border border-gray-200 bg-cream-secondary p-4">
-        <label className="flex items-center gap-3 text-sm font-semibold text-gray-bg">
+      <div className="rounded-lg border border-red-main/30 bg-cream-secondary p-4">
+        <label className="flex items-start gap-3">
           <input
             type="checkbox"
             checked={useStock}
             onChange={(e) => setUseStock(e.target.checked)}
-            className="h-4 w-4 accent-red-main"
+            className="mt-1 h-4 w-4 accent-red-main"
           />
-          Add a door from current stock (optional)
+          <span>
+            <span className="block text-base font-bold text-gray-bg">
+              Looking for a door we stock?
+            </span>
+            <span className="mt-0.5 block text-sm text-gray-600">
+              Pick the exact model, size, track, and options from our current
+              stock list and we&apos;ll quote it directly.
+            </span>
+          </span>
         </label>
 
         {useStock ? (
