@@ -30,7 +30,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/Commercial-garage-doors"
+                      href="/commercial-garage-doors"
                       className="hover:underline"
                     >
                       Commercial Doors

@@ -8,41 +8,45 @@ import BurgMenu from "@/components/layout/BurgMenu";
 import ezimg from "@/public/images/ezmobilead.png";
 import NavItem from "./NavItem";
 
+// NOTE: Brand-specific pages (CHI, Haas, Amarr, Overhead) and dedicated
+// springs pages don't exist yet. Until they're built, these links point to
+// the closest existing catalog/quote page so nothing 404s. Repoint them once
+// the dedicated pages are created.
 const navItems = [
   {
     label: "Residential",
     links: [
       { label: "All Residential Doors", href: "/residential-garage-doors" },
-      { label: "Clopay", href: "/residential/insulated" },
-      { label: "CHI", href: "/residential/CHI" },
-      { label: "Haas", href: "/residential/HAAS" },
-      { label: "Amaar", href: "/residential/AMAAR" },
+      { label: "Clopay", href: "/residential-garage-doors" },
+      { label: "CHI", href: "/residential-garage-doors" },
+      { label: "Haas", href: "/residential-garage-doors" },
+      { label: "Amarr", href: "/residential-garage-doors" },
     ],
   },
   {
     label: "Commercial",
     links: [
       { label: "All Commercial Doors", href: "/commercial-garage-doors" },
-      { label: "Clopay", href: "/residential/insulated" },
-      { label: "CHI", href: "/residential/CHI" },
-      { label: "Haas", href: "/residential/HAAS" },
-      { label: "Amaar", href: "/residential/AMAAR" },
-      { label: "Overhead", href: "/residential/OVERHEAD" },
+      { label: "Clopay", href: "/commercial-garage-doors" },
+      { label: "CHI", href: "/commercial-garage-doors" },
+      { label: "Haas", href: "/commercial-garage-doors" },
+      { label: "Amarr", href: "/commercial-garage-doors" },
+      { label: "Overhead", href: "/commercial-garage-doors" },
     ],
   },
   {
     label: "Operators",
     links: [
-      { label: "All LiftMaster Products", href: "/Liftmaster" },
-      { label: "Operators", href: "/Liftmaster/Operators" },
-      { label: "Accessories", href: "/Liftmaster/accessories" },
+      { label: "All LiftMaster Products", href: "/liftmaster-products" },
+      { label: "Operators", href: "/liftmaster-products" },
+      { label: "Accessories", href: "/liftmaster-products" },
     ],
   },
   {
     label: "Springs",
     links: [
-      { label: "Torsion Springs", href: "/springs/torsion" },
-      { label: "Extension Springs", href: "/springs/extension" },
+      { label: "Torsion Springs", href: "/request-quote" },
+      { label: "Extension Springs", href: "/request-quote" },
     ],
   },
 ];
@@ -56,7 +60,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            className="w-[115px] lg:w-[145px] lg:w-[160px]"
+            className="w-[115px] lg:w-[160px]"
             src={logo}
             width={787}
             height={241}
@@ -100,6 +104,7 @@ export default function Navbar() {
       </div>
       {/* Mobile menu dropdown */}
       <div
+        id="mobile-menu"
         className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-between ${
           isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
@@ -107,7 +112,7 @@ export default function Navbar() {
         <ul className="flex flex-col gap-4 p-4 bg-white ">
           <li className="border-b border-gray-300">
             <Link
-              href="/residential"
+              href="/residential-garage-doors"
               className="block text-red-main hover:text-red-main py-2 "
               onClick={() => setIsMenuOpen(false)}
             >
@@ -116,7 +121,7 @@ export default function Navbar() {
           </li>
           <li className="border-b border-gray-300">
             <Link
-              href="/commercial"
+              href="/commercial-garage-doors"
               className="block text-red-main hover:text-red-main py-2"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -125,7 +130,7 @@ export default function Navbar() {
           </li>
           <li className="border-b border-gray-300">
             <Link
-              href="/operators"
+              href="/liftmaster-products"
               className="block text-red-main hover:text-red-main py-2"
               onClick={() => setIsMenuOpen(false)}
             >

@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   },
   description:
     "Doors Direct LLC — residential & commercial doors and parts in Pennsauken & Union, New Jersey. Top brands, expert service.",
-  metadataBase: new URL("https://doorsdirect.com"),
+  metadataBase: new URL("https://doorsdirectsouth.com"),
   alternates: {
-    canonical: "https://doorsdirect.com",
+    canonical: "https://doorsdirectsouth.com",
   },
   openGraph: {
     title: "Doors Direct LLC",
     description: "Residential & commercial doors in Pennsauken & Union, NJ.",
-    url: "https://doorsdirect.com",
+    url: "https://doorsdirectsouth.com",
     siteName: "Doors Direct LLC",
     type: "website",
     images: [{ url: "/logo/footerlogo.png", width: 1200, height: 630 }],

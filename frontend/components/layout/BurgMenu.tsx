@@ -9,8 +9,8 @@ export default function BurgMenu({ isOpen, setIsOpen }: BurgMenuProps) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-10 h-10 inline-flex flex-col items-center justify-center gap-[5px]  rounded-md p-1 hover:cursor-pointer lg:hidden"
         aria-label={isOpen ? "Close menu" : "Open menu"}
-        aria-controls="navbar-solid"
-        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-expanded={isOpen}
       >
         {/* Top bar */}
         <span
