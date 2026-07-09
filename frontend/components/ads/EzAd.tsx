@@ -6,18 +6,19 @@ import ezdoorphone from "@/public/images/ezdoorphone.png";
 export default function EzAd() {
   return (
     <section className="w-full bg-cream-secondary px-4 py-10 md:px-8 lg:px-10 lg:py-14">
-      <div className="mx-auto grid max-w-7xl gap-8 rounded-lg bg-white p-5 shadow-sm md:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-        <div className="relative mx-auto aspect-[4/3] w-full max-w-sm rounded-lg bg-white">
+      <div className="mx-auto grid max-w-7xl gap-8 rounded-lg bg-white p-5 shadow-sm md:p-8 lg:grid-cols-2 lg:items-stretch">
+        {/* Visualizer image — half the box's width, full height */}
+        <div className="relative min-h-[300px] w-full rounded-lg bg-white lg:h-full lg:min-h-[440px]">
           <Image
             src={ezdoorphone}
             fill
-            sizes="(max-width: 1024px) 100vw, 35vw"
+            sizes="(max-width: 1024px) 100vw, 50vw"
             alt="Clopay EZDoor visualizer on a phone"
-            className="object-contain p-4"
+            className="object-contain p-2"
           />
         </div>
 
-        <div>
+        <div className="flex flex-col justify-center">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-red-main">
             Door Visualizer
           </p>

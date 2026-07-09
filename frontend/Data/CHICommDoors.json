@@ -1,34 +1,26 @@
 [
-  {
-    "id": 1,
-    "title": "Ribbed Steel",
-    "shortDesc": "Durable steel sectional doors built for storage facilities, warehouses, and everyday industrial use.",
-    "description": "C.H.I.'s Ribbed Steel commercial sectional doors are a workhorse choice for warehouses, storage facilities, and light industrial buildings. The ribbed steel sections stand up to heavy daily cycling while keeping maintenance low.\n\nAvailable in a range of gauges and insulation options with multiple window and color choices, Ribbed Steel balances strength, value, and a clean commercial look.",
-    "cover": "https://www.chiohd.com/hubfs/chi01/Pages/Commercial%20dynamic%20model%20pages/Ribbed-Steel_1.jpg",
-    "gallery": "https://www.chiohd.com/commercial-doors/ribbed-steel"
-  },
-  {
-    "id": 2,
-    "title": "Insulated Sandwich",
-    "shortDesc": "Micro-grooved and flush insulated sectional doors with R-values up to R-26.89 for demanding, climate-controlled spaces.",
-    "description": "The Insulated Sandwich collection delivers serious thermal performance for fire stations, climate-controlled warehouses, and other demanding commercial bays. Sections use polyurethane or polystyrene cores for R-values ranging from R-10.29 to R-26.89.\n\nBuilt from recyclable, carbon-neutral steel in 20–27 gauge with micro-grooved and flush designs, it offers 188 powder-coat finish options for a tailored look.",
-    "cover": "https://www.chiohd.com/hs-fs/hubfs/chi01/Pages/Insulated%20Sandwich/insulated-sandwich-image.jpeg",
-    "gallery": "https://www.chiohd.com/commercial-doors/insulated-sandwich"
-  },
-  {
-    "id": 3,
-    "title": "Full-View Aluminum",
-    "shortDesc": "Stylish aluminum storefront doors with full glass — ideal for restaurants, bars, and car dealerships.",
-    "description": "Full-View Aluminum commercial doors create bright, welcoming storefronts with expansive glass in a lightweight aluminum frame. They're a favorite for restaurants, bars, showrooms, and car dealerships that want visibility and modern curb appeal.\n\nMultiple glass and finish options let you match the door to your brand while keeping the durability and low maintenance of aluminum construction.",
-    "cover": "https://www.chiohd.com/hs-fs/hubfs/chi01/Pages/Commercial%20products/Full-View_Aluminum-Commerical-Doors-1.jpg",
-    "gallery": "https://www.chiohd.com/commercial-doors/full-view-aluminum"
-  },
-  {
-    "id": 4,
-    "title": "Rolling Service",
-    "shortDesc": "Computer-engineered overhead coiling doors with maximum strength for car washes and high-traffic openings.",
-    "description": "C.H.I.'s Rolling Service doors are overhead coiling doors engineered for maximum strength and durability in high-traffic commercial environments like car washes, loading areas, and service bays.\n\nAvailable in multiple slat types, gauges, and operation styles with customizable colors and configurations, they're built to cycle reliably for years.",
-    "cover": "https://www.chiohd.com/hs-fs/hubfs/chi01/Pages/Commercial%20products/Rolling_Steel-Doors-1.jpg",
-    "gallery": "https://www.chiohd.com/commercial-doors/rolling-service"
-  }
+ {
+  "id": 1,
+  "title": "Ribbed Steel",
+  "shortDesc": "Durable steel sectional doors built for storage facilities, warehouses, and everyday industrial use.",
+  "description": "C.H.I.'s Ribbed Steel commercial sectional doors are a workhorse choice for warehouses, storage facilities, and light industrial buildings. The ribbed steel sections stand up to heavy daily cycling while keeping maintenance low.\n\nAvailable in a range of gauges and insulation options with multiple window and color choices, Ribbed Steel balances strength, value, and a clean commercial look.",
+  "cover": "https://www.chiohd.com/hubfs/chi01/Pages/Commercial%20dynamic%20model%20pages/Ribbed-Steel_1.jpg",
+  "gallery": "https://www.chiohd.com/commercial-doors/ribbed-steel"
+ },
+ {
+  "id": 2,
+  "title": "Insulated Sandwich",
+  "shortDesc": "Micro-grooved and flush insulated sectional doors with R-values up to R-26.89 for demanding, climate-controlled spaces.",
+  "description": "The Insulated Sandwich collection delivers serious thermal performance for fire stations, climate-controlled warehouses, and other demanding commercial bays. Sections use polyurethane or polystyrene cores for R-values ranging from R-10.29 to R-26.89.\n\nBuilt from recyclable, carbon-neutral steel in 20–27 gauge with micro-grooved and flush designs, it offers 188 powder-coat finish options for a tailored look.",
+  "cover": "https://www.chiohd.com/hs-fs/hubfs/chi01/Pages/Insulated%20Sandwich/insulated-sandwich-image.jpeg",
+  "gallery": "https://www.chiohd.com/commercial-doors/insulated-sandwich"
+ },
+ {
+  "id": 3,
+  "title": "Full-View Aluminum",
+  "shortDesc": "Stylish aluminum storefront doors with full glass — ideal for restaurants, bars, and car dealerships.",
+  "description": "Full-View Aluminum commercial doors create bright, welcoming storefronts with expansive glass in a lightweight aluminum frame. They're a favorite for restaurants, bars, showrooms, and car dealerships that want visibility and modern curb appeal.\n\nMultiple glass and finish options let you match the door to your brand while keeping the durability and low maintenance of aluminum construction.",
+  "cover": "https://www.chiohd.com/hs-fs/hubfs/chi01/Pages/Commercial%20products/Full-View_Aluminum-Commerical-Doors-1.jpg",
+  "gallery": "https://www.chiohd.com/commercial-doors/full-view-aluminum"
+ }
 ]

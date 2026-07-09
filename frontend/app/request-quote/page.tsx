@@ -8,8 +8,11 @@ import {
   commercialConfigOptions,
   commercialStock,
   lockOptions,
+  panelHeights,
+  panelQuantities,
   residentialStock,
   springOptions,
+  trackLabel,
 } from "@/lib/stock";
 
 const inputClass =
@@ -20,7 +23,7 @@ const productTypes = [
   "Commercial Door",
   "Springs",
   "Parts / Hardware",
-  "Openers / Operators",
+  "Openers / Accessories",
 ];
 
 const timelines = [
@@ -63,6 +66,9 @@ function RequestQuoteForm() {
 
   // In-stock selector
   const [useStock, setUseStock] = useState(false);
+  const [stockNeed, setStockNeed] = useState<
+    "Full door" | "Replacement panel(s)"
+  >("Full door");
   const [stockType, setStockType] = useState<"residential" | "commercial">(
     "residential",
   );
@@ -73,10 +79,14 @@ function RequestQuoteForm() {
   const [height, setHeight] = useState(stockDoor.heights[0]);
   const [track, setTrack] = useState(stockDoor.tracks[0]);
   const [spring, setSpring] = useState<string>(springOptions[0]);
-  const [lock, setLock] = useState<string>(lockOptions[0]);
+  const [lock, setLock] = useState<string>(lockOptions[0].value);
   const [commercialConfig, setCommercialConfig] = useState<string>(
     commercialConfigOptions[0].value,
   );
+  // Replacement panel (section) selections
+  const [panelHeight, setPanelHeight] = useState<string>(panelHeights[0]);
+  const [panelWidth, setPanelWidth] = useState("");
+  const [panelQty, setPanelQty] = useState<string>(panelQuantities[0]);
 
   const stockLabel = useMemo(() => {
     const color = stockDoor.color ? `${stockDoor.color} ` : "";
@@ -113,20 +123,31 @@ function RequestQuoteForm() {
     if (prefillBrand) fields.push({ label: "Brand", value: prefillBrand });
 
     if (useStock) {
+      fields.push({ label: "Requesting", value: stockNeed });
       fields.push({
-        label: "In-stock door",
+        label: "In-stock model",
         value: `${stockLabel} (${stockType})`,
       });
-      fields.push({ label: "Size", value: `${width} x ${height}` });
-      fields.push({ label: "Track", value: track });
-      if (stockType === "residential") {
-        fields.push({ label: "Spring", value: spring });
-        fields.push({ label: "Lock", value: lock });
+      if (stockNeed === "Replacement panel(s)") {
+        fields.push({ label: "Panel height", value: panelHeight });
+        fields.push({ label: "Panel width", value: panelWidth });
+        fields.push({ label: "Panel quantity", value: panelQty });
       } else {
-        const cfg = commercialConfigOptions.find(
-          (o) => o.value === commercialConfig,
-        );
-        fields.push({ label: "Configuration", value: cfg?.label ?? commercialConfig });
+        fields.push({ label: "Size", value: `${width} x ${height}` });
+        fields.push({ label: "Track", value: trackLabel(track) });
+        if (stockType === "residential") {
+          fields.push({ label: "Spring", value: spring });
+          const lockChoice = lockOptions.find((l) => l.value === lock);
+          fields.push({ label: "Lock", value: lockChoice?.label ?? lock });
+        } else {
+          const cfg = commercialConfigOptions.find(
+            (o) => o.value === commercialConfig,
+          );
+          fields.push({
+            label: "Configuration",
+            value: cfg?.label ?? commercialConfig,
+          });
+        }
       }
     }
 
@@ -280,7 +301,7 @@ function RequestQuoteForm() {
 
         {useStock ? (
           <div className="mt-4 grid gap-4">
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {(["residential", "commercial"] as const).map((t) => (
                 <button
                   key={t}
@@ -297,6 +318,25 @@ function RequestQuoteForm() {
               ))}
             </div>
 
+            <Field label="What do you need?">
+              <div className="flex flex-wrap gap-2">
+                {(["Full door", "Replacement panel(s)"] as const).map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    onClick={() => setStockNeed(n)}
+                    className={`rounded-md px-4 py-2 text-sm font-semibold transition-colors ${
+                      stockNeed === n
+                        ? "bg-red-main text-white"
+                        : "border border-red-main bg-white text-red-main"
+                    }`}
+                  >
+                    {n}
+                  </button>
+                ))}
+              </div>
+            </Field>
+
             <Field label="In-stock model">
               <select
                 value={stockIndex}
@@ -312,85 +352,128 @@ function RequestQuoteForm() {
               </select>
             </Field>
 
-            <div className="grid gap-4 md:grid-cols-2">
-              <Field label="Width">
-                <select
-                  value={width}
-                  onChange={(e) => setWidth(e.target.value)}
-                  className={inputClass}
-                >
-                  {stockDoor.widths.map((w) => (
-                    <option key={w}>{w}</option>
-                  ))}
-                </select>
-              </Field>
-              <Field label="Height">
-                <select
-                  value={height}
-                  onChange={(e) => setHeight(e.target.value)}
-                  className={inputClass}
-                >
-                  {stockDoor.heights.map((h) => (
-                    <option key={h}>{h}</option>
-                  ))}
-                </select>
-              </Field>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              <Field label="Track">
-                <select
-                  value={track}
-                  onChange={(e) => setTrack(e.target.value)}
-                  className={inputClass}
-                >
-                  {stockDoor.tracks.map((t) => (
-                    <option key={t}>{t}</option>
-                  ))}
-                </select>
-              </Field>
-              {stockType === "residential" ? (
-                <Field label="Spring">
+            {stockNeed === "Replacement panel(s)" ? (
+              /* Replacement sections: stocked heights, width typed in */
+              <div className="grid gap-4 md:grid-cols-3">
+                <Field label="Panel height">
                   <select
-                    value={spring}
-                    onChange={(e) => setSpring(e.target.value)}
+                    value={panelHeight}
+                    onChange={(e) => setPanelHeight(e.target.value)}
                     className={inputClass}
                   >
-                    {springOptions.map((s) => (
-                      <option key={s}>{s}</option>
+                    {panelHeights.map((h) => (
+                      <option key={h}>{h}</option>
                     ))}
                   </select>
                 </Field>
-              ) : (
-                <Field label="Configuration">
+                <Field label="Panel width">
+                  <input
+                    required
+                    value={panelWidth}
+                    onChange={(e) => setPanelWidth(e.target.value)}
+                    placeholder={`e.g. 9'2" or 16'`}
+                    className={inputClass}
+                  />
+                </Field>
+                <Field label="How many panels?">
                   <select
-                    value={commercialConfig}
-                    onChange={(e) => setCommercialConfig(e.target.value)}
+                    value={panelQty}
+                    onChange={(e) => setPanelQty(e.target.value)}
                     className={inputClass}
                   >
-                    {commercialConfigOptions.map((o) => (
-                      <option key={o.value} value={o.value}>
-                        {o.label}
-                      </option>
+                    {panelQuantities.map((q) => (
+                      <option key={q}>{q}</option>
                     ))}
                   </select>
                 </Field>
-              )}
-            </div>
+              </div>
+            ) : (
+              <>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <Field label="Width">
+                    <select
+                      value={width}
+                      onChange={(e) => setWidth(e.target.value)}
+                      className={inputClass}
+                    >
+                      {stockDoor.widths.map((w) => (
+                        <option key={w}>{w}</option>
+                      ))}
+                    </select>
+                  </Field>
+                  <Field label="Height">
+                    <select
+                      value={height}
+                      onChange={(e) => setHeight(e.target.value)}
+                      className={inputClass}
+                    >
+                      {stockDoor.heights.map((h) => (
+                        <option key={h}>{h}</option>
+                      ))}
+                    </select>
+                  </Field>
+                </div>
 
-            {stockType === "residential" ? (
-              <Field label="Lock">
-                <select
-                  value={lock}
-                  onChange={(e) => setLock(e.target.value)}
-                  className={`${inputClass} md:w-1/2`}
-                >
-                  {lockOptions.map((l) => (
-                    <option key={l}>{l}</option>
-                  ))}
-                </select>
-              </Field>
-            ) : null}
+                <div className="grid gap-4 md:grid-cols-2">
+                  <Field label="Track">
+                    <select
+                      value={track}
+                      onChange={(e) => setTrack(e.target.value)}
+                      className={inputClass}
+                    >
+                      {stockDoor.tracks.map((t) => (
+                        <option key={t} value={t}>
+                          {trackLabel(t)}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+                  {stockType === "residential" ? (
+                    <Field label="Spring">
+                      <select
+                        value={spring}
+                        onChange={(e) => setSpring(e.target.value)}
+                        className={inputClass}
+                      >
+                        {springOptions.map((s) => (
+                          <option key={s}>{s}</option>
+                        ))}
+                      </select>
+                    </Field>
+                  ) : (
+                    <Field label="Configuration">
+                      <select
+                        value={commercialConfig}
+                        onChange={(e) => setCommercialConfig(e.target.value)}
+                        className={inputClass}
+                      >
+                        {commercialConfigOptions.map((o) => (
+                          <option key={o.value} value={o.value}>
+                            {o.label}
+                          </option>
+                        ))}
+                      </select>
+                    </Field>
+                  )}
+                </div>
+
+                {stockType === "residential" ? (
+                  <Field label="Lock">
+                    <select
+                      value={lock}
+                      onChange={(e) => setLock(e.target.value)}
+                      className={`${inputClass} md:w-1/2`}
+                    >
+                      {lockOptions.map((l) => (
+                        <option key={l.value} value={l.value}>
+                          {l.label}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+                ) : null}
+              </>
+            )}
           </div>
         ) : null}
       </div>

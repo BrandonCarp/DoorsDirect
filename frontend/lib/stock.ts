@@ -151,4 +151,30 @@ export const commercialConfigOptions = [
 
 // Option name lists (no pricing) for the quote form.
 export const springOptions = ["Extension", "Torsion"] as const;
-export const lockOptions = ["NL", "SL", "LB", "LBI"] as const;
+
+// Locks spelled out for customers (codes match the pricing sheet).
+export const lockOptions = [
+  { value: "NL", label: "No Lock" },
+  { value: "SL", label: "Slide Lock" },
+  { value: "LB", label: "Lock Bar" },
+  { value: "LBI", label: "Lock Bar Installed" },
+] as const;
+
+// Track codes spelled out for customers.
+const trackLabels: Record<string, string> = {
+  LHR: "LHR — Low Head Room",
+  FV: "FV — Full Vertical",
+  "10R": '10R — 10" Radius',
+  "12R": '12R — 12" Radius',
+  "15R": '15R — 15" Radius',
+  "20R": '20R — 20" Radius',
+  "32R": '32R — 32" Radius',
+};
+
+export function trackLabel(code: string) {
+  return trackLabels[code] ?? code;
+}
+
+// Replacement sections (panels) — stocked heights; width varies per job.
+export const panelHeights = ['18"', '21"', '24"'] as const;
+export const panelQuantities = ["1", "2", "3", "4", "5", "6+"] as const;

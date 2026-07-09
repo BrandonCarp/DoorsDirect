@@ -37,9 +37,19 @@ export default async function BrandCommercialPage({ params }: BrandPageProps) {
   }
 
   const doors = getCommercialDoorsByBrand(slug);
+  // Small catalogs spread across one row so the page fits the viewport.
+  // (Full literal class names — Tailwind can't see concatenated classes.)
+  const gridClass =
+    doors.length === 2
+      ? "md:grid-cols-2"
+      : doors.length === 3
+        ? "md:grid-cols-2 xl:grid-cols-3"
+        : doors.length === 4
+          ? "md:grid-cols-2 xl:grid-cols-4"
+          : "md:grid-cols-2 xl:grid-cols-3";
 
   return (
-    <main className="bg-cream-bg px-4 pt-28 pb-16 md:px-8 lg:px-12">
+    <main className="bg-cream-bg px-4 pt-24 pb-12 md:px-8 lg:px-12">
       <section className="mx-auto max-w-7xl">
         <Link
           href="/commercial-garage-doors"
@@ -66,7 +76,7 @@ export default async function BrandCommercialPage({ params }: BrandPageProps) {
         </div>
       </section>
 
-      <section className="mx-auto mt-8 grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <section className={`mx-auto mt-8 grid max-w-7xl gap-6 ${gridClass}`}>
         {doors.map((door) => (
           <DoorBox
             key={door.href}

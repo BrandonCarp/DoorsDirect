@@ -37,16 +37,16 @@ export default function DoorBox({
         </span>
       </Link>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h2 className="text-xl font-semibold leading-snug text-gray-bg">
+      <div className="flex flex-1 flex-col p-6">
+        <h2 className="text-2xl font-semibold leading-snug text-gray-bg">
           {doors.title}
         </h2>
-        <p className="mt-3 mb-5 text-sm leading-6 text-gray-700">
+        <p className="mt-3 mb-5 text-base leading-7 text-gray-700">
           {doors.shortDesc}
         </p>
         <Link
           href={doorLink}
-          className="mt-auto inline-flex w-fit items-center justify-center rounded-md bg-red-main px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-secondary"
+          className="mt-auto inline-flex w-fit items-center justify-center rounded-md bg-red-main px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-red-secondary"
         >
           View Specs
         </Link>

@@ -1,12 +1,41 @@
 @import "tailwindcss";
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 
+/* Global scale: the whole UI is rem-based, so bumping the root font size
+   makes text, spacing, and controls proportionally bigger site-wide.
+   Mobile stays at the browser default to avoid crowding small screens. */
+html {
+  font-size: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 106.25%; /* 17px */
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 112.5%; /* 18px */
+  }
+}
+
 body {
   /* background: var(--background);
   color: var(--foreground); */
   font-family: var(--font-roboto), sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Dotted accent pattern used in the hero (reference-style). */
+.dot-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(15, 15, 15, 0.14) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
 }
 
 @keyframes brand-scroll {

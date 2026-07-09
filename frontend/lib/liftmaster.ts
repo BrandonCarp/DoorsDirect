@@ -29,8 +29,7 @@ export const operators: Operator[] = [
       "myQ app + Wi-Fi",
       "LED lighting",
     ],
-    image:
-      "https://allsecurityequipment.com/cdn/shop/files/LiftMaster-2220L-Chain-Drive-Garage-Opener-3-4HP-Motor-1.png?v=1760539189",
+    image: "https://embed.widencdn.net/img/cgi/ydcrtdghz6/420px/2220L_1.png",
     url: "https://www.liftmaster.com/dc-chain-drive-wi-fi-with-integrated-camera/p/2220L",
   },
   {
@@ -121,7 +120,7 @@ export const operators: Operator[] = [
       "myQ app + Wi-Fi",
     ],
     image:
-      "https://allsecurityequipment.com/cdn/shop/files/LiftMaster-Residential-Wall-Mounted-Opener-98032-1.jpg?v=1708700412",
+      "https://embed.widencdn.net/img/cgi/oyggth89kz/420px/98032MC_b2c_hero_1.png",
     url: "https://www.liftmaster.com/premium-series-heavy-duty-dc-battery-backup-wall-mount-wi-fi-garage-door-opener/p/98032MC",
   },
 ];

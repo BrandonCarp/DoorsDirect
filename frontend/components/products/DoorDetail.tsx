@@ -69,12 +69,16 @@ export default function DoorDetail({
             >
               Request Estimate
             </Link>
-            <Link
-              href="/ezdoor"
-              className="inline-flex items-center justify-center rounded-md border border-red-main px-5 py-3 text-sm font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white"
-            >
-              Customize Door
-            </Link>
+            {/* Clopay's EzDoor designer only customizes Clopay residential
+                doors, so hide the button everywhere else. */}
+            {brandName === "Clopay" && category === "Residential" ? (
+              <Link
+                href="/ezdoor"
+                className="inline-flex items-center justify-center rounded-md border border-red-main px-5 py-3 text-sm font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white"
+              >
+                Customize Door
+              </Link>
+            ) : null}
           </div>
 
           <dl className="mt-7 grid gap-3 sm:grid-cols-3">

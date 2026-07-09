@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import Navbar from "@/components/layout/Navbar";
 
 import Footer from "@/components/layout/Footer";
+import ChatWidget from "@/components/chat/ChatWidget";
 // import Logo from "@/public/logo/footerlogo.png";
 
 const roboto = Roboto({
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <ChatWidget />
       </body>
     </html>
   );

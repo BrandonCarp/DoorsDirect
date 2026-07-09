@@ -33,19 +33,16 @@ const navItems = [
     ],
   },
   {
-    label: "Operators",
+    label: "LiftMaster",
     links: [
       { label: "All LiftMaster Products", href: "/liftmaster-products" },
-      { label: "Openers & Operators", href: "/liftmaster-products" },
+      { label: "Openers", href: "/liftmaster-products/openers" },
       { label: "Remotes & Accessories", href: "/liftmaster-products/accessories" },
     ],
   },
   {
     label: "Springs",
-    links: [
-      { label: "Torsion Springs", href: "/spring-request" },
-      { label: "Extension Springs", href: "/spring-request" },
-    ],
+    links: [{ label: "Request Springs", href: "/spring-request" }],
   },
 ];
 
@@ -54,9 +51,9 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-20 w-full bg-white border-b border-gray-200">
-      <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between px-6 py-5 md:px-10 lg:px-14">
+      <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-6 px-6 py-5 md:px-10 lg:px-14">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex shrink-0 items-center">
           <Image
             className="w-[115px] lg:w-[160px]"
             src={logo}
@@ -68,15 +65,13 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop menu */}
-        <div className="hidden lg:flex  ">
-          <ul className="flex items-center  lg:gap-5 ">
+        {/* Desktop menu — spread across the available width */}
+        <div className="hidden flex-1 lg:flex lg:justify-center">
+          <ul className="flex w-full max-w-3xl items-center justify-between gap-6 xl:max-w-4xl">
             {navItems.map((item) => (
               <NavItem key={item.label} label={item.label} links={item.links} />
             ))}
           </ul>
-
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-main group-hover:w-full transition-all duration-300" />
         </div>
         <div className="flex gap-5">
           <Link
@@ -126,7 +121,7 @@ export default function Navbar() {
               className="block text-red-main hover:text-red-main py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Operators
+              LiftMaster
             </Link>
           </li>
           <li className="border-b border-gray-300">

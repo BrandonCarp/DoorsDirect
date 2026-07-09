@@ -6,7 +6,7 @@ import {
 } from "@/lib/email";
 
 interface QuotePayload {
-  requestType?: "quote" | "spring";
+  requestType?: "quote" | "spring" | "inquiry";
   location?: string;
   locationLabel?: string;
   firstName?: string;
@@ -46,10 +46,12 @@ export async function POST(request: Request) {
     );
   }
 
-  const isSpring = payload.requestType === "spring";
-  const subject = isSpring
-    ? `Spring request — ${customerName}`
-    : `Quote request — ${customerName}`;
+  const subject =
+    payload.requestType === "spring"
+      ? `Spring request — ${customerName}`
+      : payload.requestType === "inquiry"
+        ? `Website message — ${customerName}`
+        : `Quote request — ${customerName}`;
 
   // Contact fields always lead the email; selection fields follow.
   const contactFields: QuoteField[] = [

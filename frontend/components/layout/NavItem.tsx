@@ -29,7 +29,7 @@ export default function NavItem({ label, links }: Props) {
     <li ref={ref} className="relative group">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center whitespace-nowrap text-red-main lg:text-3xl"
+        className="inline-flex items-center whitespace-nowrap text-red-main lg:text-2xl"
       >
         {label}
         <ChevronDownIcon
