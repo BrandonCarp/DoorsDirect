@@ -4,6 +4,8 @@ import { FormEvent, Suspense, useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { CheckCircleIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import StockDoorBuilder from "@/components/builder/StockDoorBuilder";
+import LiftMasterQuote from "@/components/builder/LiftMasterQuote";
 import {
   commercialConfigOptions,
   commercialStock,
@@ -294,7 +296,14 @@ function RequestQuoteForm() {
             </span>
             <span className="mt-0.5 block text-sm text-gray-600">
               Pick the exact model, size, track, and options from our current
-              stock list and we&apos;ll quote it directly.
+              stock list and we&apos;ll quote it directly. Prefer a guided
+              flow?{" "}
+              <Link
+                href="/request-quote?tab=builder"
+                className="font-semibold text-red-main hover:underline"
+              >
+                Try the Stock Door Builder →
+              </Link>
             </span>
           </span>
         </label>
@@ -512,47 +521,140 @@ function RequestQuoteForm() {
   );
 }
 
-export default function RequestQuote() {
+type HubTab = "builder" | "liftmaster" | "other";
+
+const HUB_TABS: { id: HubTab; label: string; desc: string }[] = [
+  {
+    id: "builder",
+    label: "Stock Door Builder",
+    desc: "Configure an in-stock Clopay door step by step.",
+  },
+  {
+    id: "liftmaster",
+    label: "LiftMaster",
+    desc: "Openers, remotes, keypads & wall controls.",
+  },
+  {
+    id: "other",
+    label: "Other Quote Requests",
+    desc: "Doors, panels, springs, parts — anything else.",
+  },
+];
+
+function OtherQuoteSection() {
   return (
-    <main className="bg-cream-bg px-4 pt-28 pb-16 md:px-8 lg:px-10">
-      <section className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-main">
-            Request A Quote
-          </p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight text-gray-bg md:text-5xl">
-            Tell us what you need and we will help price it out.
-          </h1>
-          <p className="mt-5 max-w-xl text-base leading-7 text-gray-700 md:text-lg">
-            Send over the door type, project details, and contact information. A
-            Doors Direct team member will follow up with product options,
-            availability, and next steps.
-          </p>
+    <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div>
+        <h2 className="text-3xl font-bold leading-tight text-gray-bg md:text-4xl">
+          Tell us what you need and we will help price it out.
+        </h2>
+        <p className="mt-5 max-w-xl text-base leading-7 text-gray-700 md:text-lg">
+          Send over the door type, project details, and contact information. A
+          Doors Direct team member will follow up with product options,
+          availability, and next steps.
+        </p>
 
-          <div className="mt-8 rounded-lg bg-red-main p-6 text-white">
-            <h2 className="text-xl font-bold">Need help faster?</h2>
-            <p className="mt-2 text-sm leading-6 text-white/80">
-              Call the team directly during business hours for urgent stock,
-              parts, or pickup questions.
-            </p>
-            <Link
-              href="tel:8566626666"
-              className="mt-5 inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-red-main transition-colors hover:bg-cream-secondary"
-            >
-              <PhoneIcon className="h-5 w-5" />
-              Call Now
-            </Link>
-          </div>
-        </div>
-
-        <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm md:p-8">
-          <Suspense
-            fallback={<div className="min-h-[420px]" aria-hidden="true" />}
+        <div className="mt-8 rounded-lg bg-red-main p-6 text-white">
+          <h3 className="text-xl font-bold">Need help faster?</h3>
+          <p className="mt-2 text-sm leading-6 text-white/80">
+            Call the team directly during business hours for urgent stock,
+            parts, or pickup questions.
+          </p>
+          <Link
+            href="tel:8566626666"
+            className="mt-5 inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-red-main transition-colors hover:bg-cream-secondary"
           >
-            <RequestQuoteForm />
-          </Suspense>
+            <PhoneIcon className="h-5 w-5" />
+            Call Now
+          </Link>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm md:p-8">
+        <RequestQuoteForm />
+      </div>
+    </div>
+  );
+}
+
+function QuoteHub() {
+  const searchParams = useSearchParams();
+  const requested = searchParams.get("tab");
+  // Links that arrive with a prefilled model (door pages, LiftMaster cards,
+  // the chat helper) land on the general form; everyone else starts on the
+  // builder.
+  const hasPrefill = Boolean(
+    searchParams.get("model") ||
+      searchParams.get("brand") ||
+      searchParams.get("category"),
+  );
+  const tab: HubTab =
+    requested === "builder" || requested === "liftmaster" || requested === "other"
+      ? requested
+      : hasPrefill
+        ? "other"
+        : "builder";
+
+  const tabHref = (id: HubTab) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("tab", id);
+    return `/request-quote?${params.toString()}`;
+  };
+
+  return (
+    <>
+      <section className="mx-auto max-w-7xl">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-main">
+          Request A Quote
+        </p>
+        <h1 className="mt-3 text-3xl font-bold leading-tight text-gray-bg md:text-5xl">
+          What can we quote for you?
+        </h1>
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          {HUB_TABS.map((t) => (
+            <Link
+              key={t.id}
+              href={tabHref(t.id)}
+              scroll={false}
+              aria-current={tab === t.id ? "page" : undefined}
+              className={`rounded-lg border px-5 py-4 transition-colors ${
+                tab === t.id
+                  ? "border-red-main bg-red-main text-white"
+                  : "border-gray-300 bg-white text-gray-bg hover:border-red-main hover:text-red-main"
+              }`}
+            >
+              <span className="block text-base font-bold">{t.label}</span>
+              <span
+                className={`mt-0.5 block text-sm ${
+                  tab === t.id ? "text-white/75" : "text-gray-600"
+                }`}
+              >
+                {t.desc}
+              </span>
+            </Link>
+          ))}
         </div>
       </section>
+
+      <section className="mx-auto mt-8 max-w-7xl">
+        {tab === "builder" ? (
+          <StockDoorBuilder />
+        ) : tab === "liftmaster" ? (
+          <LiftMasterQuote />
+        ) : (
+          <OtherQuoteSection />
+        )}
+      </section>
+    </>
+  );
+}
+
+export default function RequestQuote() {
+  return (
+    <main className="bg-cream-bg px-4 pt-8 pb-16 md:px-8 lg:px-10">
+      <Suspense fallback={<div className="min-h-[480px]" aria-hidden="true" />}>
+        <QuoteHub />
+      </Suspense>
     </main>
   );
 }

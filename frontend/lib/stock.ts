@@ -12,6 +12,23 @@ export type StockDoor = {
   tracks: string[];
 };
 
+// Heights on the floor: 6'0"–8'0" in every stocked colour; 9'0" is White
+// only, on every model. (10'0" came off the stock sheets.)
+const SHORT_HEIGHTS = [
+  "6'0\"",
+  "6'3\"",
+  "6'6\"",
+  "6'9\"",
+  "7'0\"",
+  "7'6\"",
+  "7'9\"",
+  "8'0\"",
+];
+const WHITE_HEIGHTS = [...SHORT_HEIGHTS, "9'0\""];
+const RES_TRACKS = ["LHR", "10R", "12R", "15R", "20R", "32R"];
+
+// Mirrors the DDS floor list: T50S/T52S, the 4050 family, 9130/9133, and the
+// Gallery pair. The 4300 family is NOT floored as a complete door.
 export const residentialStock: StockDoor[] = [
   {
     color: "White",
@@ -19,39 +36,19 @@ export const residentialStock: StockDoor[] = [
     category: "Value Steel",
     description: "Hollow, Short Panel",
     widths: ["7'6\"", "8'", "9'", "10'", "12'", "15'", "16'"],
-    heights: [
-      "6'3\"",
-      "6'6\"",
-      "6'9\"",
-      "7'0\"",
-      "7'6\"",
-      "7'9\"",
-      "8'0\"",
-      "9'0\"",
-      "10'0\"",
-    ],
-    tracks: ["LHR", "10R", "12R", "15R", "20R", "32R"],
+    heights: WHITE_HEIGHTS,
+    tracks: RES_TRACKS,
   },
   {
     color: "White",
     model: "T52S",
     category: "Value Steel",
     description: "Vinyl Back, Short Panel",
-    widths: ["8'", "9'", "10'", "12'", "16'"],
-    heights: [
-      "6'3\"",
-      "6'6\"",
-      "6'9\"",
-      "7'0\"",
-      "7'6\"",
-      "7'9\"",
-      "8'0\"",
-      "9'0\"",
-      "10'0\"",
-    ],
-    tracks: ["LHR", "10R", "12R", "15R", "20R", "32R"],
+    widths: ["8'", "9'", "10'", "16'"],
+    heights: WHITE_HEIGHTS,
+    tracks: RES_TRACKS,
   },
-  ...["White", "Almond", "Chocolate", "Sandtone"].map((color) => ({
+  ...["White", "Almond", "Chocolate Brown", "Sandtone"].map((color) => ({
     color,
     model: "4050",
     category: "Premium Steel",
@@ -71,21 +68,8 @@ export const residentialStock: StockDoor[] = [
             "18'",
           ]
         : ["7'6\"", "8'", "9'", "16'"],
-    heights:
-      color === "White"
-        ? [
-            "6'3\"",
-            "6'6\"",
-            "6'9\"",
-            "7'0\"",
-            "7'6\"",
-            "7'9\"",
-            "8'0\"",
-            "9'0\"",
-            "10'0\"",
-          ]
-        : ["6'3\"", "6'6\"", "6'9\"", "7'0\"", "7'6\"", "7'9\"", "8'0\""],
-    tracks: ["LHR", "10R", "12R", "15R", "20R", "32R"],
+    heights: color === "White" ? WHITE_HEIGHTS : SHORT_HEIGHTS,
+    tracks: RES_TRACKS,
   })),
   {
     color: "Black",
@@ -93,16 +77,16 @@ export const residentialStock: StockDoor[] = [
     category: "Premium Steel",
     description: "3 Layer Steel Short Panel",
     widths: ["8'", "9'", "16'"],
-    heights: ["6'3\"", "6'6\"", "6'9\"", "7'0\"", "7'6\"", "7'9\"", "8'0\""],
-    tracks: ["LHR", "10R", "12R", "15R", "20R", "32R"],
+    heights: SHORT_HEIGHTS,
+    tracks: RES_TRACKS,
   },
   ...[
     ["White", "4051", "3 Layer Steel Flush Panel"],
     ["Black", "4051", "3 Layer Steel Flush Panel"],
     ["White", "4053", "3 Layer Steel Long Panel"],
     ["Black", "4053", "3 Layer Steel Long Panel"],
-    ["White", "4300", "3 Layer Steel Short Panel"],
-    ["Black", "4300", "3 Layer Steel Short Panel"],
+    ["White", "9130", "Premium Steel Short Panel"],
+    ["White", "9133", "Premium Steel Long Panel"],
     ["White", "GD1SP", "3 Layer Gallery Short Panel"],
     ["White", "GD1LP", "3 Layer Gallery Long Panel"],
   ].map(([color, model, description]) => ({
@@ -111,8 +95,8 @@ export const residentialStock: StockDoor[] = [
     category: model.startsWith("GD") ? "Gallery Steel" : "Premium Steel",
     description,
     widths: ["8'", "9'", "16'"],
-    heights: ["6'3\"", "6'6\"", "6'9\"", "7'0\"", "7'6\"", "7'9\"", "8'0\""],
-    tracks: ["LHR", "10R", "12R", "15R", "20R", "32R"],
+    heights: color === "White" ? WHITE_HEIGHTS : SHORT_HEIGHTS,
+    tracks: RES_TRACKS,
   })),
 ];
 

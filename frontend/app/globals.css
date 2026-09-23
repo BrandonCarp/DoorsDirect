@@ -1,22 +1,23 @@
 @import "tailwindcss";
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 
-/* Global scale: the whole UI is rem-based, so bumping the root font size
-   makes text, spacing, and controls proportionally bigger site-wide.
-   Mobile stays at the browser default to avoid crowding small screens. */
+/* Global scale: the whole UI is rem-based, so the root font size scales
+   text, spacing, and controls proportionally site-wide. Dialed back slightly
+   (was 17px/18px) so everything reads a touch smaller. Mobile stays at the
+   browser default. */
 html {
   font-size: 100%;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 106.25%; /* 17px */
+    font-size: 103.125%; /* 16.5px */
   }
 }
 
 @media (min-width: 1280px) {
   html {
-    font-size: 112.5%; /* 18px */
+    font-size: 106.25%; /* 17px */
   }
 }
 
