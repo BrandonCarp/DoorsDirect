@@ -58,7 +58,9 @@ function Underline({ children }: { children: React.ReactNode }) {
 export default function HeroHeader() {
   return (
     <section className="bg-white">
-      <div className="relative overflow-hidden bg-cream-secondary px-4 pt-24 pb-12 md:px-8 md:pt-28 lg:px-10 lg:pb-16">
+      {/* Top padding steps up with the viewport — phones get a tight gap
+          under the sticky navbar instead of the old pt-24 void. */}
+      <div className="relative overflow-hidden bg-cream-secondary px-4 pt-10 pb-12 md:px-8 md:pt-16 lg:px-10 lg:pt-20 lg:pb-16">
         {/* Dotted accent pattern, top right (like the reference) */}
         <div
           aria-hidden="true"
@@ -73,11 +75,11 @@ export default function HeroHeader() {
               Wholesale Door Supply — Pennsauken &amp; Union, NJ
             </p>
 
-            <h1 className="mt-5 text-5xl font-bold leading-[1.12] tracking-tight text-gray-bg md:text-6xl xl:text-7xl">
+            <h1 className="mt-5 text-4xl font-bold leading-[1.12] tracking-tight text-gray-bg sm:text-5xl md:text-6xl">
               Garage doors, openers &amp; parts.{" "}
               <Underline>In stock</Underline> and ready to go.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-gray-600">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-gray-600 md:text-lg md:leading-8">
               Residential and commercial doors from Clopay, C.H.I., Haas, and
               Amarr, plus LiftMaster openers, springs, and everyday parts —
               backed by a team that keeps jobs moving.

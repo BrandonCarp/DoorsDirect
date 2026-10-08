@@ -2,23 +2,11 @@
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 
 /* Global scale: the whole UI is rem-based, so the root font size scales
-   text, spacing, and controls proportionally site-wide. Dialed back slightly
-   (was 17px/18px) so everything reads a touch smaller. Mobile stays at the
-   browser default. */
+   text, spacing, and controls proportionally site-wide. Flat 16px at every
+   breakpoint — the desktop upscale (16.5px/17px) was dropped to make the
+   whole site read smaller. Bump these media queries to scale it back up. */
 html {
   font-size: 100%;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 103.125%; /* 16.5px */
-  }
-}
-
-@media (min-width: 1280px) {
-  html {
-    font-size: 106.25%; /* 17px */
-  }
 }
 
 body {

@@ -51,11 +51,11 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-20 w-full bg-white border-b border-gray-200">
-      <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-6 px-6 py-5 md:px-10 lg:px-14">
+      <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between gap-6 px-6 py-3 md:px-10 lg:px-14">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center">
           <Image
-            className="w-[115px] lg:w-[160px]"
+            className="w-[100px] lg:w-[130px]"
             src={logo}
             width={787}
             height={241}
@@ -76,15 +76,15 @@ export default function Navbar() {
         <div className="flex gap-5">
           <Link
             href="/request-quote"
-            className="hidden items-center justify-center rounded-md bg-red-main px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-secondary focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2 lg:inline-flex"
+            className="hidden items-center justify-center rounded-md bg-red-main px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-secondary focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2 lg:inline-flex"
           >
             Request a Quote
           </Link>
           <Link
             href="tel:8566626666"
-            className="hidden items-center justify-center gap-2 rounded-md border border-red-main bg-white px-5 py-3 text-sm font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2 lg:inline-flex"
+            className="hidden items-center justify-center gap-2 rounded-md border border-red-main bg-white px-4 py-2.5 text-sm font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white focus:outline-none focus:ring-2 focus:ring-red-secondary focus:ring-offset-2 lg:inline-flex"
           >
-            <PhoneIcon className="h-5 w-5" /> Call Now
+            <PhoneIcon className="h-4 w-4" /> Call Now
           </Link>
         </div>
         <BurgMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
