@@ -157,6 +157,7 @@ function RequestQuoteForm() {
 
     const payload = {
       requestType: "quote" as const,
+      website: (data.get("website") as string) || "",
       location,
       firstName: (data.get("firstName") as string) || "",
       lastName: (data.get("lastName") as string) || "",
@@ -209,6 +210,16 @@ function RequestQuoteForm() {
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-5">
+      {/* Honeypot — hidden from people, tempting to bots; server drops it. */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
+
       {prefillModel ? (
         <div className="rounded-md border border-red-main/30 bg-cream-secondary px-4 py-3 text-sm text-gray-bg">
           Requesting a quote for{" "}

@@ -39,6 +39,47 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+// Local-business structured data for search engines — this is what feeds
+// "garage doors near me" style results. Street addresses can be added to each
+// entry once confirmed; only verified details are included.
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://doorsdirectsouth.com/#south",
+      name: "Doors Direct South",
+      url: "https://doorsdirectsouth.com",
+      telephone: "+18566626666",
+      image: "https://doorsdirectsouth.com/logo/footerlogo.png",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Pennsauken",
+        addressRegion: "NJ",
+        addressCountry: "US",
+      },
+      description:
+        "Wholesale garage door distribution center — residential and commercial doors from Clopay, C.H.I., Haas, and Amarr, plus LiftMaster openers, springs, and parts.",
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://doorsdirectsouth.com/#union",
+      name: "Doors Direct Union",
+      url: "https://doorsdirectsouth.com",
+      telephone: "+18566626666",
+      image: "https://doorsdirectsouth.com/logo/footerlogo.png",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Union",
+        addressRegion: "NJ",
+        addressCountry: "US",
+      },
+      description:
+        "Wholesale garage door distribution center — residential and commercial doors from Clopay, C.H.I., Haas, and Amarr, plus LiftMaster openers, springs, and parts.",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,6 +90,12 @@ export default function RootLayout({
       <body
         className={`${roboto.className} antialiased overflow-x-hidden bg-cream-bg`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
         <Navbar />
         {children}
         <Footer />

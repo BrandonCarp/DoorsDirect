@@ -18,6 +18,25 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "allsecurityequipment.com" },
     ],
   },
+  // Baseline security headers for every response. HSTS comes from the host
+  // (e.g. Vercel) once the site is served over HTTPS.
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          // The site never needs to render inside someone else's iframe.
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

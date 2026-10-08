@@ -137,6 +137,7 @@ export default function SpringRequest() {
 
     const payload = {
       requestType: "spring" as const,
+      website: (data.get("website") as string) || "",
       location,
       firstName: (data.get("firstName") as string) || "",
       lastName: (data.get("lastName") as string) || "",
@@ -216,6 +217,16 @@ export default function SpringRequest() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="grid gap-5">
+      {/* Honeypot — hidden from people, tempting to bots; server drops it. */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
+
               <Field label="Which location? *">
                 <select
                   required

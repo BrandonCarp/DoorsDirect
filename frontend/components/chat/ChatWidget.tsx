@@ -166,6 +166,7 @@ export default function ChatWidget() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           requestType: "inquiry",
+          website: (data.get("website") as string) || "",
           location: data.get("location"),
           firstName: data.get("firstName"),
           lastName: data.get("lastName"),
@@ -253,6 +254,14 @@ export default function ChatWidget() {
                 onSubmit={handleFormSubmit}
                 className="grid gap-2 rounded-lg border border-gray-200 p-3"
               >
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
                 <div className="grid grid-cols-2 gap-2">
                   <input required name="firstName" placeholder="First name" className="rounded-md border border-gray-300 px-3 py-2 text-sm" />
                   <input required name="lastName" placeholder="Last name" className="rounded-md border border-gray-300 px-3 py-2 text-sm" />

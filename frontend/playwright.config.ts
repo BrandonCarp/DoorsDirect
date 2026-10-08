@@ -74,6 +74,7 @@ export default defineConfig({
      build (matches what ships); reuses an already-running server locally. */
   webServer: {
     command: 'npm run build && npm run start',
+    env: { QUOTE_RATE_LIMIT: '1000' },
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
     timeout: 180 * 1000,

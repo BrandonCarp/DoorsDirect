@@ -69,6 +69,7 @@ export default function LiftMasterQuote() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           requestType: "quote",
+          website: (data.get("website") as string) || "",
           location,
           firstName: data.get("firstName"),
           lastName: data.get("lastName"),
@@ -230,6 +231,16 @@ export default function LiftMasterQuote() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="grid gap-3">
+                {/* Honeypot — hidden from people, tempting to bots; server drops it. */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
+
                 <Field label="Which location? *">
                   <select
                     required
