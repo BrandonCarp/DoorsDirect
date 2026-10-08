@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/logo/logo1.png";
 import { PhoneIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import BurgMenu from "@/components/layout/BurgMenu";
 import ezimg from "@/public/images/ezmobilead.png";
 import NavItem from "./NavItem";
@@ -44,6 +45,14 @@ const navItems = [
     label: "Springs",
     links: [{ label: "Request Springs", href: "/spring-request" }],
   },
+];
+
+// The hamburger menu's flat link list — every desktop section, one tap deep.
+const mobileLinks = [
+  { label: "Residential Doors", href: "/residential-garage-doors" },
+  { label: "Commercial Doors", href: "/commercial-garage-doors" },
+  { label: "LiftMaster", href: "/liftmaster-products" },
+  { label: "Springs", href: "/spring-request" },
 ];
 
 export default function Navbar() {
@@ -92,63 +101,67 @@ export default function Navbar() {
       {/* Mobile menu dropdown */}
       <div
         id="mobile-menu"
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-between ${
-          isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden overflow-hidden border-t border-gray-100 transition-all duration-300 ease-in-out ${
+          isMenuOpen ? "max-h-[44rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="flex flex-col gap-4 p-4 bg-white ">
-          <li className="border-b border-gray-300">
-            <Link
-              href="/residential-garage-doors"
-              className="block text-red-main hover:text-red-main py-2 "
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Residential Doors
-            </Link>
-          </li>
-          <li className="border-b border-gray-300">
-            <Link
-              href="/commercial-garage-doors"
-              className="block text-red-main hover:text-red-main py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Commercial Doors
-            </Link>
-          </li>
-          <li className="border-b border-gray-300">
-            <Link
-              href="/liftmaster-products"
-              className="block text-red-main hover:text-red-main py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              LiftMaster
-            </Link>
-          </li>
-          <li className="border-b border-gray-300">
+        <div className="space-y-4 bg-white px-5 pb-5 pt-1">
+          <ul className="divide-y divide-gray-100">
+            {mobileLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="flex items-center justify-between py-3 text-base font-semibold text-gray-bg transition-colors hover:text-red-main"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                  <ChevronRightIcon className="h-4 w-4 text-gray-300" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* EzDoor promo card */}
+          <div className="flex items-center gap-4 rounded-lg border border-gray-200 bg-cream-secondary p-3">
+            <Image
+              src={ezimg}
+              alt="Clopay EzDoor door designer"
+              width={132}
+              height={66}
+              quality={75}
+              className="w-28 shrink-0"
+            />
+            <div>
+              <p className="text-sm font-bold leading-snug text-gray-bg">
+                Design your Clopay door online
+              </p>
+              <Link
+                href="/ezdoor"
+                className="mt-2 inline-flex items-center rounded-md bg-red-main px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-red-secondary"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Design Your Door
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick actions */}
+          <div className="grid grid-cols-2 gap-3">
             <Link
               href="/request-quote"
-              className="block text-red-main hover:text-red-main py-2"
+              className="inline-flex items-center justify-center rounded-md bg-red-main px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-secondary"
               onClick={() => setIsMenuOpen(false)}
             >
               Request a Quote
             </Link>
-          </li>
-        </ul>
-        <div className="flex flex-col items-center gap-3 border-l border-gray-300 pl-5">
-          <Image
-            src={ezimg}
-            alt="Clopay EzDoor Promotional Image"
-            width={200}
-            height={100}
-            quality={75}
-          />
-          <Link
-            href="/ezdoor"
-            className="flex items-center gap-2 bg-red-main text-white px-4 py-2 rounded hover:bg-red-secondary w-[150px] whitespace-nowrap"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <span>Design Your Door</span>
-          </Link>
+            <Link
+              href="tel:8566626666"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-red-main bg-white px-4 py-2.5 text-sm font-semibold text-red-main transition-colors hover:bg-red-main hover:text-white"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <PhoneIcon className="h-4 w-4" /> Call Now
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

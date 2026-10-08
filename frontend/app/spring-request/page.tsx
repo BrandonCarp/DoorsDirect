@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CheckCircleIcon, PhoneIcon } from "@heroicons/react/24/outline";
 
 const inputClass =
-  "rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-bg outline-none transition focus:border-red-main focus:ring-2 focus:ring-red-main/20";
+  "rounded-md border border-gray-300 bg-white px-3 py-2.5 text-gray-bg outline-none transition focus:border-red-main focus:ring-2 focus:ring-red-main/20";
 
 // Spring specs offered as dropdowns (no pricing).
 // Wire sizes follow the full Service Spring (SSC) spring wire chart.
@@ -54,9 +54,9 @@ const wireSizes = [
 // Standard torsion spring inside diameters (residential through commercial).
 const insideDiameters = ['1 3/4"', '2"', '2 1/4"', '2 5/8"', '3 3/4"', '6"'];
 const windDirections = [
-  "Right wound (RW)",
-  "Left wound (LW)",
-  "Pair — one of each",
+  "Left hand wind (LHW)",
+  "Right hand wind (RHW)",
+  "Pair — one LHW, one RHW",
   "Not sure",
 ];
 // Extension spring weight ratings from 50 lb through 440 lb in 10 lb steps.
@@ -64,18 +64,6 @@ const extensionWeights = Array.from(
   { length: 40 },
   (_, i) => `${50 + i * 10} lb`,
 );
-const doorWidths = [
-  "8'",
-  "9'",
-  "10'",
-  "12'",
-  "14'",
-  "15'",
-  "16'",
-  "18'",
-  "Other",
-];
-const doorHeights = ["7'", "8'", "9'", "10'", "12'", "14'", "Other"];
 
 function Field({
   label,
@@ -106,10 +94,10 @@ export default function SpringRequest() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
+    // Spring specs only — no door dimensions; the description box catches
+    // anything unusual and the team confirms the match.
     const fields: { label: string; value: string }[] = [
       { label: "Spring type", value: springType },
-      { label: "Door width", value: (data.get("doorWidth") as string) || "" },
-      { label: "Door height", value: (data.get("doorHeight") as string) || "" },
       { label: "Quantity", value: (data.get("quantity") as string) || "" },
     ];
 
@@ -165,26 +153,26 @@ export default function SpringRequest() {
   }
 
   return (
-    <main className="bg-cream-bg px-4 pt-28 pb-16 md:px-8 lg:px-10">
+    <main className="bg-cream-bg px-4 pt-6 pb-12 md:px-8 lg:px-10">
       <section className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-main">
             Spring Request
           </p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight text-gray-bg md:text-5xl">
+          <h1 className="mt-2 text-3xl font-bold leading-tight text-gray-bg md:text-4xl">
             Need springs? Tell us the sizes and we&apos;ll match them.
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-7 text-gray-700 md:text-lg">
-            Give us the spring specs, or just your door size if you&apos;re not
-            sure — our team will confirm the right torsion or extension springs
-            and get back to you with availability.
+          <p className="mt-3 max-w-xl text-base leading-7 text-gray-700">
+            Give us the spring specs — wire size, inside diameter, length, and
+            wind — and our team will confirm the right torsion or extension
+            springs and get back to you with availability.
           </p>
 
-          <div className="mt-8 rounded-lg bg-red-main p-6 text-white">
+          <div className="mt-6 rounded-lg bg-red-main p-5 text-white">
             <h2 className="text-xl font-bold">Not sure of your specs?</h2>
             <p className="mt-2 text-sm leading-6 text-white/80">
-              No problem — send your door width, height, and weight if you have
-              it, add photos of the label if you can, and we&apos;ll figure out
+              No problem — describe what you&apos;re replacing in the box, note
+              the cone color code if you can see one, and we&apos;ll figure out
               the rest. Or call us directly.
             </p>
             <Link
@@ -197,7 +185,7 @@ export default function SpringRequest() {
           </div>
         </div>
 
-        <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm md:p-8">
+        <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6">
           {status === "sent" ? (
             <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
               <CheckCircleIcon className="h-14 w-14 text-red-main" />
@@ -216,7 +204,7 @@ export default function SpringRequest() {
               </Link>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="grid gap-5">
+            <form onSubmit={handleSubmit} className="grid gap-4">
       {/* Honeypot — hidden from people, tempting to bots; server drops it. */}
       <input
         type="text"
@@ -243,7 +231,7 @@ export default function SpringRequest() {
                 </select>
               </Field>
 
-              <div className="grid gap-5 md:grid-cols-2">
+              <div className="grid gap-4 md:grid-cols-2">
                 <Field label="First name *">
                   <input required name="firstName" className={inputClass} />
                 </Field>
@@ -252,7 +240,7 @@ export default function SpringRequest() {
                 </Field>
               </div>
 
-              <div className="grid gap-5 md:grid-cols-2">
+              <div className="grid gap-4 md:grid-cols-2">
                 <Field label="Email *">
                   <input required type="email" name="email" className={inputClass} />
                 </Field>
@@ -261,7 +249,7 @@ export default function SpringRequest() {
                 </Field>
               </div>
 
-              <div className="grid gap-5 md:grid-cols-2">
+              <div className="grid gap-4 md:grid-cols-2">
                 <Field label="Spring type">
                   <select
                     value={springType}
@@ -283,26 +271,9 @@ export default function SpringRequest() {
                 </Field>
               </div>
 
-              <div className="grid gap-5 md:grid-cols-2">
-                <Field label="Door width">
-                  <select name="doorWidth" className={inputClass}>
-                    {doorWidths.map((w) => (
-                      <option key={w}>{w}</option>
-                    ))}
-                  </select>
-                </Field>
-                <Field label="Door height">
-                  <select name="doorHeight" className={inputClass}>
-                    {doorHeights.map((h) => (
-                      <option key={h}>{h}</option>
-                    ))}
-                  </select>
-                </Field>
-              </div>
-
               {springType === "Torsion" ? (
                 <>
-                  <div className="grid gap-5 md:grid-cols-2">
+                  <div className="grid gap-4 md:grid-cols-2">
                     <Field label="Wire size">
                       <select name="wireSize" className={inputClass}>
                         <option value="">Not sure</option>
@@ -320,7 +291,7 @@ export default function SpringRequest() {
                       </select>
                     </Field>
                   </div>
-                  <div className="grid gap-5 md:grid-cols-2">
+                  <div className="grid gap-4 md:grid-cols-2">
                     <Field label="Approx. length (inches)">
                       <input
                         name="springLength"
@@ -338,7 +309,7 @@ export default function SpringRequest() {
                   </div>
                 </>
               ) : (
-                <div className="grid gap-5 md:grid-cols-2">
+                <div className="grid gap-4 md:grid-cols-2">
                   <Field label="Weight rating">
                     <select name="weight" className={inputClass}>
                       <option value="">Not sure</option>
@@ -357,11 +328,11 @@ export default function SpringRequest() {
                 </div>
               )}
 
-              <Field label="Additional details">
+              <Field label="Describe what you need">
                 <textarea
                   name="details"
                   rows={4}
-                  placeholder="Cone type, color code, existing spring measurements, or anything else that helps us match your springs..."
+                  placeholder="e.g. Two springs for a 16x7 steel door, red cone, broken on the left side - measurements, cone color codes, or anything else that helps us match them..."
                   className={`${inputClass} resize-none`}
                 />
               </Field>

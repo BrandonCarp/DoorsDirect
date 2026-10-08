@@ -18,7 +18,7 @@ import {
 } from "@/lib/stock";
 
 const inputClass =
-  "rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-bg outline-none transition focus:border-red-main focus:ring-2 focus:ring-red-main/20";
+  "rounded-md border border-gray-300 bg-white px-3 py-2.5 text-gray-bg outline-none transition focus:border-red-main focus:ring-2 focus:ring-red-main/20";
 
 const productTypes = [
   "Residential Door",
@@ -27,6 +27,18 @@ const productTypes = [
   "Parts / Hardware",
   "Openers / Accessories",
 ];
+
+// Manufacturers we quote. Door pages prefill this via ?brand=, but walk-in
+// visitors pick one here so every door request reaches the counter with the
+// manufacturer stated.
+const brandOptions = ["Clopay", "C.H.I.", "Haas", "Amarr", "Other / Not sure"];
+
+// Special-order spec dropdowns — wide open on purpose (any manufacturer,
+// any series), with "Other" escape hatches. Exact in-stock sizing lives in
+// the Stock Door Builder instead.
+const specWidths = ["8'", "9'", "10'", "12'", "14'", "15'", "16'", "18'", "Other / custom"];
+const specHeights = ["7'", "7'6\"", "8'", "9'", "10'", "12'", "14'", "Other / custom"];
+const specTracks = ["LHR", "10R", "12R", "15R", "20R", "32R", "FV"];
 
 const timelines = [
   "As soon as possible",
@@ -65,6 +77,10 @@ function RequestQuoteForm() {
   const [productType, setProductType] = useState(
     prefillCategory === "Commercial" ? "Commercial Door" : "Residential Door",
   );
+  // Brand pages arrive with ?brand= (Haas, CHI, ...); it stays editable here
+  // and is always sent with the request so the quote states the manufacturer.
+  const [brand, setBrand] = useState(prefillBrand);
+  const isDoorRequest = productType.endsWith("Door");
 
   // In-stock selector
   const [useStock, setUseStock] = useState(false);
@@ -120,9 +136,24 @@ function RequestQuoteForm() {
 
     const fields: { label: string; value: string }[] = [];
     fields.push({ label: "Product type", value: productType });
+    if (brand) fields.push({ label: "Brand / manufacturer", value: brand });
     const interest = (data.get("model") as string) || prefillModel;
     if (interest) fields.push({ label: "Model / product of interest", value: interest });
-    if (prefillBrand) fields.push({ label: "Brand", value: prefillBrand });
+
+    // Special-order door specs (hidden while the in-stock selector is on).
+    if (isDoorRequest && !useStock) {
+      const spec: [string, string][] = [
+        ["Width", (data.get("specWidth") as string) || ""],
+        ["Height", (data.get("specHeight") as string) || ""],
+        ["Quantity", (data.get("specQty") as string) || ""],
+        ["Color", (data.get("specColor") as string) || ""],
+        ["Track", (data.get("specTrack") as string) || ""],
+        ["Windows", (data.get("specWindows") as string) || ""],
+      ];
+      for (const [label, value] of spec) {
+        if (value) fields.push({ label, value });
+      }
+    }
 
     if (useStock) {
       fields.push({ label: "Requesting", value: stockNeed });
@@ -209,7 +240,7 @@ function RequestQuoteForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5">
+    <form onSubmit={handleSubmit} className="grid gap-4">
       {/* Honeypot — hidden from people, tempting to bots; server drops it. */}
       <input
         type="text"
@@ -247,7 +278,7 @@ function RequestQuoteForm() {
         </select>
       </Field>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2">
         <Field label="First name *">
           <input required name="firstName" className={inputClass} />
         </Field>
@@ -256,7 +287,7 @@ function RequestQuoteForm() {
         </Field>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2">
         <Field label="Email *">
           <input required type="email" name="email" className={inputClass} />
         </Field>
@@ -269,7 +300,7 @@ function RequestQuoteForm() {
         <input name="company" className={inputClass} />
       </Field>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-3">
         <Field label="Product type">
           <select
             name="productType"
@@ -282,15 +313,98 @@ function RequestQuoteForm() {
             ))}
           </select>
         </Field>
+        <Field label="Brand / manufacturer">
+          <select
+            name="brand"
+            value={brand}
+            onChange={(e) => setBrand(e.target.value)}
+            className={inputClass}
+          >
+            <option value="">Select a brand…</option>
+            {/* A prefilled brand that isn't in the list (e.g. LiftMaster)
+                still shows and submits correctly. */}
+            {prefillBrand && !brandOptions.includes(prefillBrand) ? (
+              <option value={prefillBrand}>{prefillBrand}</option>
+            ) : null}
+            {brandOptions.map((b) => (
+              <option key={b}>{b}</option>
+            ))}
+          </select>
+        </Field>
         <Field label="Model / product of interest">
           <input
             name="model"
             defaultValue={prefillModel}
-            placeholder="e.g. Bridgeport Steel, or leave blank"
+            placeholder="e.g. Bridgeport Steel"
             className={inputClass}
           />
         </Field>
       </div>
+
+      {/* Special-order door specs — size, color, track, etc. Hidden when the
+          in-stock selector below is on, which collects its own exact specs. */}
+      {isDoorRequest && !useStock ? (
+        <div className="grid gap-4 rounded-lg border border-gray-200 bg-white/60 p-4">
+          <p className="text-sm font-bold text-gray-bg">
+            Door specs{" "}
+            <span className="font-normal text-gray-600">
+              — fill in what you know, skip the rest
+            </span>
+          </p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <Field label="Width">
+              <select name="specWidth" defaultValue="" className={inputClass}>
+                <option value="">Not sure</option>
+                {specWidths.map((w) => (
+                  <option key={w}>{w}</option>
+                ))}
+              </select>
+            </Field>
+            <Field label="Height">
+              <select name="specHeight" defaultValue="" className={inputClass}>
+                <option value="">Not sure</option>
+                {specHeights.map((h) => (
+                  <option key={h}>{h}</option>
+                ))}
+              </select>
+            </Field>
+            <Field label="Quantity">
+              <select name="specQty" defaultValue="1" className={inputClass}>
+                {["1", "2", "3", "4", "5+"].map((q) => (
+                  <option key={q}>{q}</option>
+                ))}
+              </select>
+            </Field>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <Field label="Color / finish">
+              <input
+                name="specColor"
+                placeholder="e.g. White, Sandtone, walnut"
+                className={inputClass}
+              />
+            </Field>
+            <Field label="Track">
+              <select name="specTrack" defaultValue="" className={inputClass}>
+                <option value="">Not sure</option>
+                {specTracks.map((t) => (
+                  <option key={t} value={trackLabel(t)}>
+                    {trackLabel(t)}
+                  </option>
+                ))}
+              </select>
+            </Field>
+            <Field label="Windows">
+              <select name="specWindows" defaultValue="" className={inputClass}>
+                <option value="">Not sure</option>
+                <option>No windows</option>
+                <option>Plain glass</option>
+                <option>Decorative inserts</option>
+              </select>
+            </Field>
+          </div>
+        </div>
+      ) : null}
 
       {/* In-stock selector */}
       <div className="rounded-lg border border-red-main/30 bg-cream-secondary p-4">
@@ -509,7 +623,7 @@ function RequestQuoteForm() {
       <Field label="Project details">
         <textarea
           name="details"
-          rows={5}
+          rows={4}
           placeholder="Door size, collection, color, insulation, pickup location, or any job details..."
           className={`${inputClass} resize-none`}
         />
@@ -556,16 +670,16 @@ function OtherQuoteSection() {
   return (
     <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
       <div>
-        <h2 className="text-3xl font-bold leading-tight text-gray-bg md:text-4xl">
+        <h2 className="text-2xl font-bold leading-tight text-gray-bg md:text-3xl">
           Tell us what you need and we will help price it out.
         </h2>
-        <p className="mt-5 max-w-xl text-base leading-7 text-gray-700 md:text-lg">
+        <p className="mt-3 max-w-xl text-base leading-7 text-gray-700">
           Send over the door type, project details, and contact information. A
           Doors Direct team member will follow up with product options,
           availability, and next steps.
         </p>
 
-        <div className="mt-8 rounded-lg bg-red-main p-6 text-white">
+        <div className="mt-6 rounded-lg bg-red-main p-5 text-white">
           <h3 className="text-xl font-bold">Need help faster?</h3>
           <p className="mt-2 text-sm leading-6 text-white/80">
             Call the team directly during business hours for urgent stock,
@@ -581,7 +695,7 @@ function OtherQuoteSection() {
         </div>
       </div>
 
-      <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm md:p-8">
+      <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6">
         <RequestQuoteForm />
       </div>
     </div>
@@ -618,17 +732,17 @@ function QuoteHub() {
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-main">
           Request A Quote
         </p>
-        <h1 className="mt-3 text-3xl font-bold leading-tight text-gray-bg md:text-5xl">
+        <h1 className="mt-2 text-2xl font-bold leading-tight text-gray-bg md:text-4xl">
           What can we quote for you?
         </h1>
-        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+        <div className="mt-5 grid gap-3 sm:grid-cols-3">
           {HUB_TABS.map((t) => (
             <Link
               key={t.id}
               href={tabHref(t.id)}
               scroll={false}
               aria-current={tab === t.id ? "page" : undefined}
-              className={`rounded-lg border px-5 py-4 transition-colors ${
+              className={`rounded-lg border px-4 py-3 transition-colors ${
                 tab === t.id
                   ? "border-red-main bg-red-main text-white"
                   : "border-gray-300 bg-white text-gray-bg hover:border-red-main hover:text-red-main"
@@ -647,7 +761,7 @@ function QuoteHub() {
         </div>
       </section>
 
-      <section className="mx-auto mt-8 max-w-7xl">
+      <section className="mx-auto mt-6 max-w-7xl">
         {tab === "builder" ? (
           <StockDoorBuilder />
         ) : tab === "liftmaster" ? (
@@ -662,7 +776,7 @@ function QuoteHub() {
 
 export default function RequestQuote() {
   return (
-    <main className="bg-cream-bg px-4 pt-8 pb-16 md:px-8 lg:px-10">
+    <main className="bg-cream-bg px-4 pt-6 pb-12 md:px-8 lg:px-10">
       <Suspense fallback={<div className="min-h-[480px]" aria-hidden="true" />}>
         <QuoteHub />
       </Suspense>
